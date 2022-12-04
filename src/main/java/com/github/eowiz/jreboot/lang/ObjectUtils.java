@@ -73,9 +73,11 @@ public class ObjectUtils {
   /**
    * Checks if all values supplied in the array are not {@code nulls}.
    *
-   * @param suppliers the suppliers to test, if the array contains {@code null} then this method throws {@link NullPointerException}
-   * @return {@code false} if there is at least one {@code null} value in values supplied from the array or the array is {@code null},
-   *    {@code true} if all values supplied from the array are not {@code nulls} or array contains no elements.
+   * @param suppliers the suppliers to test, if the array contains {@code null} then this method
+   *     throws {@link NullPointerException}
+   * @return {@code false} if there is at least one {@code null} value in values supplied from the
+   *     array or the array is {@code null}, {@code true} if all values supplied from the array are
+   *     not {@code nulls} or array contains no elements.
    */
   public static boolean allNotNull(@Nullable Supplier<?>... suppliers) {
     return !anyNull(suppliers);
@@ -96,7 +98,8 @@ public class ObjectUtils {
   }
 
   @Nullable
-  public static <T> T defaultIfNull(@Nullable T object, @Nonnull Supplier<? extends T> defaultSupplier) {
+  public static <T> T defaultIfNull(
+      @Nullable T object, @Nonnull Supplier<? extends T> defaultSupplier) {
     if (object != null) {
       return object;
     }
@@ -105,10 +108,12 @@ public class ObjectUtils {
   }
 
   /**
-   * Returns the result of calling {@code toString} for a non- {@code null} argument and {@code null} for a {@code null} argument.
+   * Returns the result of calling {@code toString} for a non- {@code null} argument and {@code
+   * null} for a {@code null} argument.
    *
    * @param object an object
-   * @return the result of calling {@code toString} for a non- {@code null} argument and {@code null} for a {@code null} argument
+   * @return the result of calling {@code toString} for a non- {@code null} argument and {@code
+   *     null} for a {@code null} argument
    */
   @Nullable
   public static String toString(@Nullable Object object) {

@@ -49,13 +49,13 @@ public class ObjectUtilsTest {
 
     static List<Arguments> provider_objects() {
       return List.of(
-          arguments(new Object[]{}, false),
-          arguments(new Object[]{ null }, true),
-          arguments(new Object[]{ "non-null" }, false),
-          arguments(new Object[]{ null, null }, true),
-          arguments(new Object[]{ "non-null", null }, true),
-          arguments(new Object[]{ null, "non-null" }, true),
-          arguments(new Object[]{ "non-null", "non-null" }, false));
+          arguments(new Object[] {}, false),
+          arguments(new Object[] {null}, true),
+          arguments(new Object[] {"non-null"}, false),
+          arguments(new Object[] {null, null}, true),
+          arguments(new Object[] {"non-null", null}, true),
+          arguments(new Object[] {null, "non-null"}, true),
+          arguments(new Object[] {"non-null", "non-null"}, false));
     }
 
     @ParameterizedTest
@@ -71,11 +71,11 @@ public class ObjectUtilsTest {
     static List<Arguments> provider_supplier() {
       return List.of(
           arguments(new Supplier<?>[] {}, false),
-          arguments(new Supplier<?>[] { () -> null }, true),
-          arguments(new Supplier<?>[] { () -> null, () -> null }, true),
-          arguments(new Supplier<?>[] { () -> null, () -> "non-null" }, true),
-          arguments(new Supplier<?>[] { () -> "non-null" }, false),
-          arguments(new Supplier<?>[] { () -> "non-null", () -> "non-null" }, false));
+          arguments(new Supplier<?>[] {() -> null}, true),
+          arguments(new Supplier<?>[] {() -> null, () -> null}, true),
+          arguments(new Supplier<?>[] {() -> null, () -> "non-null"}, true),
+          arguments(new Supplier<?>[] {() -> "non-null"}, false),
+          arguments(new Supplier<?>[] {() -> "non-null", () -> "non-null"}, false));
     }
 
     @Test
