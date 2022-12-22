@@ -16,12 +16,12 @@ public abstract class Either<L, R> {
   public abstract R getRight();
 
   @NotNull
-  public static <L, R> Either<@Nullable L, @Nullable R> right(@Nullable R value) {
+  public static <L, R> Either<@Nullable L, @Nullable R> rightOf(@Nullable R value) {
     return new Right<>(value);
   }
 
   @NotNull
-  public static <L, R> Either<@Nullable L, @Nullable R> left(@Nullable L value) {
+  public static <L, R> Either<@Nullable L, @Nullable R> leftOf(@Nullable L value) {
     return new Left<>(value);
   }
 
@@ -34,7 +34,7 @@ public abstract class Either<L, R> {
       @NotNull Function<? super R, ? extends U> mapper) {
     Objects.requireNonNull(mapper);
 
-    return this.isLeft() ? left(this.getLeft()) : right(mapper.apply(this.getRight()));
+    return this.isLeft() ? leftOf(this.getLeft()) : rightOf(mapper.apply(this.getRight()));
   }
 
   @NotNull
@@ -43,16 +43,19 @@ public abstract class Either<L, R> {
       @NotNull Function<? super R, ? extends Either<L, ? extends U>> mapper) {
     Objects.requireNonNull(mapper);
 
-    return this.isLeft() ? left(this.getLeft()) : (Either<L, U>) mapper.apply(this.getRight());
+    return this.isLeft()
+        ? (Either<L, U>) Objects.requireNonNull(this.getLeft())
+        : (Either<L, U>) mapper.apply(this.getRight());
   }
 
   private Either() {}
 
-  static class Left<L, R> extends Either<L, R> {
+  private static class Left<L, R> extends Either<L, R> {
 
+    @Nullable
     private final L value;
 
-    private Left(L value) {
+    private Left(@Nullable L value) {
       this.value = value;
     }
 
@@ -72,11 +75,12 @@ public abstract class Either<L, R> {
     }
   }
 
-  static class Right<L, R> extends Either<L, R> {
+  private static class Right<L, R> extends Either<L, R> {
 
+    @Nullable
     private final R value;
 
-    private Right(R value) {
+    private Right(@Nullable R value) {
       this.value = value;
     }
 

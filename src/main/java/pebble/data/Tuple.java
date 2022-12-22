@@ -1,5 +1,6 @@
 package pebble.data;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class Tuple<T, U> {
@@ -35,5 +36,10 @@ public final class Tuple<T, U> {
   @Nullable
   public U getRight() {
     return this.getSecond();
+  }
+
+  @NotNull
+  public Tuple<@Nullable U, @Nullable T> swap() {
+    return new Tuple<>(this.second, this.first);
   }
 }

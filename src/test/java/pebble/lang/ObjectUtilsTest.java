@@ -80,10 +80,7 @@ public class ObjectUtilsTest {
           arguments(new Supplier<?>[] {() -> "non-null", () -> "non-null"}, false));
     }
 
-    @SuppressWarnings({
-        "ResultOfMethodCallIgnored",
-      "ConfusingArgumentToVarargsMethod"
-    })
+    @SuppressWarnings({"ResultOfMethodCallIgnored", "ConfusingArgumentToVarargsMethod"})
     @Test
     void mock_direct_null_argument() {
       try (MockedStatic<ObjectUtils> utils = Mockito.mockStatic(ObjectUtils.class)) {

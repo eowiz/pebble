@@ -4,7 +4,7 @@ import java.util.Comparator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class ComparatorUtils {
+public final class Comparators {
 
   private static final int EQUAL = 0;
 
@@ -12,7 +12,7 @@ public final class ComparatorUtils {
 
   private static final int LOWER = -1;
 
-  private ComparatorUtils() {}
+  private Comparators() {}
 
   public static <T> int nullHighCompare(
       @Nullable T a, @Nullable T b, @NotNull Comparator<@Nullable T> comparator) {

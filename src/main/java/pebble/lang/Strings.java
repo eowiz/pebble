@@ -10,9 +10,9 @@ import org.jetbrains.annotations.Nullable;
  * @since 1.0.0
  * @author eowiz
  */
-public final class StringUtils {
+public final class Strings {
 
-  private StringUtils() {}
+  private Strings() {}
 
   public static boolean isEmpty(@Nullable String string) {
     if (string == null) {

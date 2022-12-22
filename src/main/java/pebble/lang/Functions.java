@@ -4,9 +4,9 @@ import java.util.function.Function;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class FunctionUtils {
+public final class Functions {
 
-  private FunctionUtils() {}
+  private Functions() {}
 
   public static <T, U> Function<@Nullable T, @Nullable U> safety(
       Function<@NotNull T, @Nullable U> f) {

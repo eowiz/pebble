@@ -1,6 +1,5 @@
 package pebble.data;
 
-import pebble.lang.IteratorUtils;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -11,6 +10,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import pebble.lang.Iterators;
 
 /**
  * Alternative of {@link java.util.Optional}.
@@ -136,10 +136,14 @@ public abstract class Option<T> implements Iterable<T> {
   }
 
   public final boolean exists(@NotNull Predicate<@Nullable T> predicate) {
+    Objects.requireNonNull(predicate);
+
     return !this.isEmpty() && predicate.test(this.get());
   }
 
   public final boolean forall(@NotNull Predicate<@Nullable T> predicate) {
+    Objects.requireNonNull(predicate);
+
     return this.isEmpty() || predicate.test(this.get());
   }
 
@@ -148,7 +152,7 @@ public abstract class Option<T> implements Iterable<T> {
     return this.isEmpty() ? none() : some(new Tuple<>(this.get(), right));
   }
 
-  static final class None<T> extends Option<T> {
+  private static final class None<T> extends Option<T> {
 
     private static final None<?> SINGLETON = new None<>();
 
@@ -192,7 +196,7 @@ public abstract class Option<T> implements Iterable<T> {
     }
   }
 
-  static final class Some<T> extends Option<T> {
+  private static final class Some<T> extends Option<T> {
 
     @Nullable private final T value;
 
@@ -214,7 +218,7 @@ public abstract class Option<T> implements Iterable<T> {
     @NotNull
     @Override
     public Iterator<@Nullable T> iterator() {
-      return IteratorUtils.iterate(this.value);
+      return Iterators.iterate(this.value);
     }
 
     @NotNull
