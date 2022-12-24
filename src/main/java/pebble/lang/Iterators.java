@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
@@ -12,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class Iterators {
+
+  private static final Object NONE = new Object();
 
   private Iterators() {}
 
@@ -39,7 +42,7 @@ public final class Iterators {
 
         this.hasNext = false;
 
-        return null;
+        return value;
       }
     };
   }
@@ -56,33 +59,15 @@ public final class Iterators {
 
   @NotNull
   public static <T> Iterator<@Nullable T> iterate(
-      @Nullable T initialValue,
-      @NotNull UnaryOperator<T> operator,
-      @NotNull Predicate<T> predicate) {
-    Objects.requireNonNull(operator);
-    Objects.requireNonNull(predicate);
+      @NotNull Supplier<@Nullable T> seedSupplier, @NotNull UnaryOperator<@Nullable T> f) {
+    Objects.requireNonNull(seedSupplier);
+    Objects.requireNonNull(f);
+
     return new Iterator<>() {
 
-      @Nullable
-      private T nextValue = initialValue;
+      @SuppressWarnings("unchecked")
+      private T value = (T) NONE;
 
-      private boolean firstTime;
-
-      @Override
-      public boolean hasNext() {
-        return predicate.test(nextValue);
-      }
-
-      @Override
-      public T next() {
-        return this.nextValue;
-      }
-    };
-  }
-
-  @NotNull
-  public static <T> Iterator<@Nullable T> repeat(@Nullable T value) {
-    return new Iterator<>() {
       @Override
       public boolean hasNext() {
         return true;
@@ -91,24 +76,80 @@ public final class Iterators {
       @SuppressWarnings("java:S2272")
       @Override
       public T next() {
-        return value;
+        this.value = (this.value == NONE) ? seedSupplier.get() : f.apply(this.value);
+
+        return this.value;
       }
     };
   }
 
   @NotNull
-  public static <T> Iterator<@Nullable T> repeat(@NotNull Supplier<@Nullable T> supplier) {
+  public static <T> Iterator<@Nullable T> iterate(
+      @NotNull Supplier<T> seedSupplier,
+      @NotNull Predicate<? super T> hasNext,
+      @NotNull UnaryOperator<T> next) {
+    Objects.requireNonNull(hasNext);
+    Objects.requireNonNull(next);
+
     return new Iterator<>() {
+
+      private T prev;
+
+      private boolean started;
+
+      private boolean finished;
+
       @Override
       public boolean hasNext() {
+        if (this.finished) {
+          return false;
+        }
+
+        final T value;
+        if (!this.started) {
+          value = seedSupplier.get();
+          this.started = true;
+        } else {
+          value = next.apply(prev);
+        }
+
+        if (!hasNext.test(value)) {
+          this.prev = null;
+          this.finished = true;
+
+          return false;
+        }
+
+        this.prev = value;
+
         return true;
       }
 
-      @SuppressWarnings("java:S2272")
       @Override
       public T next() {
-        return supplier.get();
+        if (this.finished) {
+          throw new NoSuchElementException();
+        }
+
+        if (!this.started) {
+          this.started = true;
+          return seedSupplier.get();
+        }
+
+        return this.prev;
       }
     };
+  }
+
+  @NotNull
+  public static <T> Iterator<@Nullable T> generate(@Nullable T seed) {
+    return iterate(() -> seed, Function.<T>identity()::apply);
+  }
+
+  @NotNull
+  public static <T> Iterator<@Nullable T> generate(@NotNull Supplier<@Nullable T> seedSupplier) {
+    Objects.requireNonNull(seedSupplier);
+
+    return iterate(seedSupplier, Function.<T>identity()::apply);
   }
 }

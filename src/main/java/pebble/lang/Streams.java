@@ -12,7 +12,7 @@ public final class Streams {
   private Streams() {}
 
   @NotNull
-  public static <T> Stream<T> stream(@NotNull Iterator<T> iterator) {
+  public static <T> Stream<T> from(@NotNull Iterator<T> iterator) {
     Objects.requireNonNull(iterator);
 
     final var spliterator = Spliterators.spliteratorUnknownSize(iterator, 0);

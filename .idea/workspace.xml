@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412a41c5-f8b9-457c-9dcf-cb7d761113b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Booleans.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Iterators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Predicates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Streams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Lazy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/data/Either.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Either.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/data/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Option.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/data/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Tuple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/ComparatorUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Comparators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/FunctionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/IteratorUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Strings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pebble/lang/ObjectUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pebble/lang/ObjectUtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Iterators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Iterators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Streams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Streams.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +217,7 @@
       <workItem from="1671213188178" duration="15875000" />
       <workItem from="1671284534606" duration="8585000" />
       <workItem from="1671628224034" duration="8991000" />
-      <workItem from="1671713476485" duration="4928000" />
+      <workItem from="1671713476485" duration="12750000" />
     </task>
     <servers />
   </component>
