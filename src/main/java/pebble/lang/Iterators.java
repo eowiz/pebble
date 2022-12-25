@@ -99,10 +99,16 @@ public final class Iterators {
 
       private boolean finished;
 
+      private boolean nextCalled;
+
       @Override
       public boolean hasNext() {
         if (this.finished) {
           return false;
+        }
+
+        if (!nextCalled) {
+          return !hasNext.test(this.prev);
         }
 
         final T value;
@@ -127,14 +133,11 @@ public final class Iterators {
 
       @Override
       public T next() {
-        if (this.finished) {
+        if (!this.hasNext()) {
           throw new NoSuchElementException();
         }
 
-        if (!this.started) {
-          this.started = true;
-          return seedSupplier.get();
-        }
+        this.nextCalled = true;
 
         return this.prev;
       }
