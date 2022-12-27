@@ -1,5 +1,6 @@
 package pebble.lang;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -7,8 +8,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Utilities on {@link String} that are annotated with {@link Nullable} and {@link NotNull}.
  *
- * @since 1.0.0
  * @author eowiz
+ * @since 1.0.0
  */
 public final class Strings {
 
@@ -42,6 +43,8 @@ public final class Strings {
   @Nullable
   public static String defaultIfEmpty(
       @Nullable String string, @NotNull Supplier<String> defaultSupplier) {
+    Objects.requireNonNull(defaultSupplier);
+
     if (isEmpty(string)) {
       return defaultSupplier.get();
     }
@@ -66,6 +69,8 @@ public final class Strings {
   @Nullable
   public static String defaultString(
       @Nullable String string, @NotNull Supplier<String> defaultSupplier) {
+    Objects.requireNonNull(defaultSupplier);
+
     if (string == null) {
       return defaultSupplier.get();
     }

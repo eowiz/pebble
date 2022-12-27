@@ -1,6 +1,7 @@
 package pebble.lang;
 
 import java.util.Comparator;
+import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -16,6 +17,8 @@ public final class Comparators {
 
   public static <T> int nullHighCompare(
       @Nullable T a, @Nullable T b, @NotNull Comparator<@Nullable T> comparator) {
+    Objects.requireNonNull(comparator);
+
     if (a == null && b == null) {
       return EQUAL;
     }
@@ -33,6 +36,8 @@ public final class Comparators {
 
   public static <T> int nullLowCompare(
       @Nullable T a, @Nullable T b, @NotNull Comparator<@Nullable T> comparator) {
+    Objects.requireNonNull(comparator);
+
     return -nullHighCompare(a, b, comparator);
   }
 }

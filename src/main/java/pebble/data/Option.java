@@ -19,8 +19,8 @@ import pebble.lang.Iterators;
  * behavior is similar but not same.
  *
  * @param <T> The type of the optional value.
- * @since 1.0.0
  * @author eowiz
+ * @since 1.0.0
  */
 @SuppressWarnings("java:S1610")
 public abstract class Option<T> implements Iterable<T> {

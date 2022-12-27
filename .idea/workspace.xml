@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412a41c5-f8b9-457c-9dcf-cb7d761113b9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/pebble.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pebble/data/BooleansTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/data/Either.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Either.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/data/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Option.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Booleans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Booleans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Iterators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Iterators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Comparators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Comparators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Functions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/ObjectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/ObjectUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Strings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,28 +94,15 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.pebble [spotlessJavaApply]">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.eowiz.jreboot.Main" />
-      <module name="jreboot.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.eowiz.jreboot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OptionTest.of" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.BooleansTest.isTrue_Boolean">
+    <configuration name="BooleansTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -118,7 +115,53 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.github.eowiz.jreboot.data.OptionTest.of&quot;" />
+            <option value="&quot;pebble.data.BooleansTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="BooleansTest.isTrue_Boolean" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;pebble.data.BooleansTest.isTrue_Boolean&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="BooleansTest.isTrue_boolean" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;pebble.data.BooleansTest.isTrue_boolean&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -149,27 +192,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="jreboot [spotlessApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="spotlessApply" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="pebble [spotlessJavaApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -193,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BooleansTest.isTrue_Boolean" />
+        <item itemvalue="Gradle.BooleansTest.isTrue_boolean" />
         <item itemvalue="Gradle.pebble [spotlessJavaApply]" />
+        <item itemvalue="Gradle.BooleansTest" />
         <item itemvalue="Gradle.Tests in 'jreboot.test'" />
-        <item itemvalue="Gradle.jreboot [spotlessApply]" />
-        <item itemvalue="Gradle.OptionTest.of" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +238,7 @@
       <workItem from="1671213188178" duration="15875000" />
       <workItem from="1671284534606" duration="8585000" />
       <workItem from="1671628224034" duration="8991000" />
-      <workItem from="1671713476485" duration="17549000" />
+      <workItem from="1671713476485" duration="23320000" />
     </task>
     <servers />
   </component>

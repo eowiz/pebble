@@ -82,6 +82,8 @@ public final class ObjectUtils {
    *     not {@code nulls} or array contains no elements.
    */
   public static boolean allNotNull(@NotNull Supplier<?>... suppliers) {
+    Objects.requireNonNull(suppliers);
+
     return !anyNull(suppliers);
   }
 
@@ -102,6 +104,8 @@ public final class ObjectUtils {
   @Nullable
   public static <T> T defaultIfNull(
       @Nullable T object, @NotNull Supplier<? extends T> defaultSupplier) {
+    Objects.requireNonNull(defaultSupplier);
+
     if (object != null) {
       return object;
     }

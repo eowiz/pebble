@@ -52,8 +52,7 @@ public abstract class Either<L, R> {
 
   private static class Left<L, R> extends Either<L, R> {
 
-    @Nullable
-    private final L value;
+    @Nullable private final L value;
 
     private Left(@Nullable L value) {
       this.value = value;
@@ -77,8 +76,7 @@ public abstract class Either<L, R> {
 
   private static class Right<L, R> extends Either<L, R> {
 
-    @Nullable
-    private final R value;
+    @Nullable private final R value;
 
     private Right(@Nullable R value) {
       this.value = value;
