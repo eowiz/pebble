@@ -6,27 +6,28 @@ import static org.junit.jupiter.params.provider.Arguments.*;
 import java.util.List;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.CsvSource;
+import pebble.converter.OptionValue;
 
 public class OptionTest {
 
-  @ParameterizedTest(name = "Option.of({0}).equals({1}) = {2}")
-  @MethodSource("provider_of")
-  void of(Object object, Option<Object> expected, boolean isEqual) {
+  @ParameterizedTest
+  // @MethodSource("provider_of")
+  @CsvSource(
+      value = {
+        "null | None       | false",
+        "some | Some(some) | true",
+        "null | Some(some) | false",
+        "some | None       | false",
+        "some | Some(1)    | false",
+        "1    | Some(some) | false"
+      },
+      delimiter = '|')
+  void of(Object object, @OptionValue Option<?> expected, boolean isEqual) {
     // act:
     final var actual = Option.of(object);
 
     // assert:
     assertThat(actual.equals(expected)).isEqualTo(isEqual);
-  }
-
-  static List<Arguments> provider_of() {
-    return List.of(
-        arguments(null, Option.none(), true),
-        arguments("some", Option.some("some"), true),
-        arguments(null, Option.some("some"), false),
-        arguments("some", Option.none(), false),
-        arguments("some", Option.some(1), false),
-        arguments("1", Option.some("some"), false));
   }
 }

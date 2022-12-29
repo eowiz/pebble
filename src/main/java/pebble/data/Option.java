@@ -48,12 +48,12 @@ public abstract class Option<T> implements Iterable<T> {
 
   @NotNull
   @SuppressWarnings("unchecked")
-  static <T> Option<@Nullable T> none() {
+  public static <T> Option<@Nullable T> none() {
     return (Option<T>) None.SINGLETON;
   }
 
   @NotNull
-  static <T> Option<@Nullable T> some(@Nullable T value) {
+  public static <T> Option<@Nullable T> some(@Nullable T value) {
     return new Some<>(value);
   }
 

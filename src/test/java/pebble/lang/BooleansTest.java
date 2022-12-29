@@ -1,17 +1,29 @@
-package pebble.data;
+package pebble.lang;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.linesOf;
 
+import java.lang.invoke.MethodHandles;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pebble.lang.Booleans;
 
 /** A test class for {@link Booleans}. */
 public class BooleansTest {
 
+  private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
   @ParameterizedTest
-  @CsvSource({"null,false", "true,true", "false,false"})
+  @CsvSource(
+      value = {" | false", "true | true", "false | false"},
+      delimiter = '|')
   void isTrue_Boolean(Boolean bool, boolean expected) {
+    // arrange:
+    log.info("bool = {}", bool);
+    log.info("expected = {}", expected);
+
     // act:
     final var actual = Booleans.isTrue(bool);
 
@@ -20,7 +32,9 @@ public class BooleansTest {
   }
 
   @ParameterizedTest
-  @CsvSource({"true,true", "false,false"})
+  @CsvSource(
+      value = {"true | true", "false| false"},
+      delimiter = '|')
   void isTrue_boolean(boolean bool, boolean expected) {
     // act:
     final var actual = Booleans.isTrue(bool);
@@ -30,7 +44,9 @@ public class BooleansTest {
   }
 
   @ParameterizedTest
-  @CsvSource({"null,false", "true,false", "false,true"})
+  @CsvSource(
+      value = {" | false", "true | false", "false | true"},
+      delimiter = '|')
   void isFalse_Boolean(Boolean bool, boolean expected) {
     // act:
     final var actual = Booleans.isFalse(bool);
@@ -40,7 +56,9 @@ public class BooleansTest {
   }
 
   @ParameterizedTest
-  @CsvSource({"true,false", "false,true"})
+  @CsvSource(
+      value = {"true | false", "false | true"},
+      delimiter = '|')
   void isFalse_boolean(boolean bool, boolean expected) {
     // act:
     final var actual = Booleans.isFalse(bool);
