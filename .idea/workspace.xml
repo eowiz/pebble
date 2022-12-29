@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412a41c5-f8b9-457c-9dcf-cb7d761113b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pebble/lang/FunctionsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pebble/lang/PredicatesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Functions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,32 +90,29 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.FunctionsTest.safety_apply_to_full">
-    <configuration name="All in pebble.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pebble.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="JUnit.PredicatesTest">
+    <configuration name="pebble [spotlessJavaApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="spotlessJavaApply" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="BooleansTest.isTrue_Boolean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pebble.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pebble.lang.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.BooleansTest" />
-      <option name="METHOD_NAME" value="isTrue_Boolean(java.lang.Boolean,boolean)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FunctionsTest.safety_apply_to_full" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PredicatesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
@@ -125,14 +121,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.FunctionsTest" />
-      <option name="METHOD_NAME" value="safety_apply_to_full" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="pebble.lang.PredicatesTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FunctionsTest.safety_null_throws_exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PredicatesTest.CONST_false" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
@@ -141,35 +136,52 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.FunctionsTest" />
-      <option name="METHOD_NAME" value="safety_null_throws_exception" />
+      <option name="MAIN_CLASS_NAME" value="pebble.lang.PredicatesTest" />
+      <option name="METHOD_NAME" value="CONST_false(java.lang.Object)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Booleans.spec" type="executeSpecs" factoryName="GaugeConfigurationFactory" temporary="true">
-      <setting name="environment" value="" />
-      <setting name="specsToExecute" value="$PROJECT_DIR$/specs/Booleans.spec" />
-      <setting name="tags" value="" />
-      <setting name="parallelNodes" value="" />
-      <setting name="execInParallel" value="false" />
-      <setting name="programParameters" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="moduleName" value="pebble" />
-      <envMap />
-      <setting name="rowsRange" value="" />
+    <configuration name="PredicatesTest.CONST_true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pebble.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pebble.lang.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pebble.lang" />
+      <option name="MAIN_CLASS_NAME" value="pebble.lang.PredicatesTest" />
+      <option name="METHOD_NAME" value="CONST_true(java.lang.Object)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PredicatesTest.alwaysFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pebble.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pebble.lang.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pebble.lang" />
+      <option name="MAIN_CLASS_NAME" value="pebble.lang.PredicatesTest" />
+      <option name="METHOD_NAME" value="alwaysFalse(java.lang.Object)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FunctionsTest.safety_apply_to_full" />
-        <item itemvalue="JUnit.FunctionsTest.safety_null_throws_exception" />
-        <item itemvalue="JUnit.BooleansTest.isTrue_Boolean" />
-        <item itemvalue="JUnit.All in pebble.test" />
-        <item itemvalue="Gauge Execution.Booleans.spec" />
+        <item itemvalue="JUnit.PredicatesTest" />
+        <item itemvalue="Gradle.pebble [spotlessJavaApply]" />
+        <item itemvalue="JUnit.PredicatesTest.CONST_false" />
+        <item itemvalue="JUnit.PredicatesTest.CONST_true" />
+        <item itemvalue="JUnit.PredicatesTest.alwaysFalse" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +200,7 @@
       <workItem from="1671213188178" duration="15875000" />
       <workItem from="1671284534606" duration="8585000" />
       <workItem from="1671628224034" duration="8991000" />
-      <workItem from="1671713476485" duration="45870000" />
+      <workItem from="1671713476485" duration="48052000" />
     </task>
     <servers />
   </component>
