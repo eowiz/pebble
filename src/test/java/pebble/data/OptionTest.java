@@ -1,14 +1,12 @@
 package pebble.data;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.params.provider.Arguments.*;
 
-import java.util.List;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import pebble.converter.OptionValue;
 
+@SuppressWarnings("java:S5786")
 public class OptionTest {
 
   @ParameterizedTest

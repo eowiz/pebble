@@ -7,6 +7,7 @@ public final class Predicates {
 
   private Predicates() {}
 
+  @SuppressWarnings("java:S100")
   @NotNull
   public static <T> Predicate<T> CONST(boolean bool) {
     return ignore -> bool;

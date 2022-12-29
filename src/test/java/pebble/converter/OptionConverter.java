@@ -6,6 +6,7 @@ import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.TypedArgumentConverter;
 import pebble.data.Option;
 
+@SuppressWarnings("rawtypes")
 public class OptionConverter extends TypedArgumentConverter<String, Option> {
 
   private static final Pattern SOME_PATTERN = Pattern.compile("Some\\((?<value>.+)\\)");

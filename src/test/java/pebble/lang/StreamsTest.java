@@ -3,21 +3,22 @@ package pebble.lang;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.ThrowableAssert.catchThrowable;
 
-import java.util.List;
 import org.assertj.core.api.SoftAssertions;
 import org.assertj.core.api.junit.jupiter.InjectSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+@SuppressWarnings("java:S5786")
 @ExtendWith(SoftAssertionsExtension.class)
 public class StreamsTest {
 
   @InjectSoftAssertions private SoftAssertions softly;
 
   @Test
-  public void from_throws_npe() {
+  void from_throws_npe() {
     // act:
+    @SuppressWarnings("ConstantConditions")
     final var actual = catchThrowable(() -> Streams.from(null));
 
     // assert:
@@ -25,7 +26,7 @@ public class StreamsTest {
   }
 
   @Test
-  public void from_fixed_size_iterator() {
+  void from_fixed_size_iterator() {
     // arrange:
     final var iterator = Iterators.iterate(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
@@ -39,7 +40,7 @@ public class StreamsTest {
   }
 
   @Test
-  public void from_containing_null() {
+  void from_containing_null() {
     // arrange:
     final var iterator = Iterators.iterate(1, 2, null, 4, null);
 
@@ -53,7 +54,7 @@ public class StreamsTest {
   }
 
   @Test
-  public void from_infinite_iterator() {
+  void from_infinite_iterator() {
     // arrange:
     final var iterator = Iterators.generate(1);
 

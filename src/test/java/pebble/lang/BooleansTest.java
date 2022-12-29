@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /** A test class for {@link Booleans}. */
+@SuppressWarnings("java:S5786")
 public class BooleansTest {
 
   private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());

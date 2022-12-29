@@ -87,6 +87,7 @@ public final class ObjectUtils {
     return !anyNull(suppliers);
   }
 
+  @SuppressWarnings("java:S100")
   @NotNull
   public static <T> Function<@Nullable T, @Nullable T> CONST(@Nullable T t) {
     return ignore -> t;
