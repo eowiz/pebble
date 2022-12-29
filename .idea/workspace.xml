@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412a41c5-f8b9-457c-9dcf-cb7d761113b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pebble/lang/PredicatesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pebble/lang/StreamsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Streams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Streams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pebble/lang/BooleansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pebble/lang/BooleansTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pebble/lang/FunctionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pebble/lang/FunctionsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +93,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.PredicatesTest">
+  <component name="RunManager" selected="JUnit.StreamsTest.from_containing_null">
     <configuration name="pebble [spotlessJavaApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -112,7 +115,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PredicatesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StreamsTest.from" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
@@ -121,29 +124,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.PredicatesTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PredicatesTest.CONST_false" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pebble.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pebble.lang.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.PredicatesTest" />
-      <option name="METHOD_NAME" value="CONST_false(java.lang.Object)" />
+      <option name="MAIN_CLASS_NAME" value="pebble.lang.StreamsTest" />
+      <option name="METHOD_NAME" value="from" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PredicatesTest.CONST_true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StreamsTest.from_containing_null" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
@@ -152,14 +140,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.PredicatesTest" />
-      <option name="METHOD_NAME" value="CONST_true(java.lang.Object)" />
+      <option name="MAIN_CLASS_NAME" value="pebble.lang.StreamsTest" />
+      <option name="METHOD_NAME" value="from_containing_null" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PredicatesTest.alwaysFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StreamsTest.from_infinite_iterator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
@@ -168,8 +156,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.PredicatesTest" />
-      <option name="METHOD_NAME" value="alwaysFalse(java.lang.Object)" />
+      <option name="MAIN_CLASS_NAME" value="pebble.lang.StreamsTest" />
+      <option name="METHOD_NAME" value="from_infinite_iterator" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamsTest.from_throws_npe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pebble.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pebble.lang.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pebble.lang" />
+      <option name="MAIN_CLASS_NAME" value="pebble.lang.StreamsTest" />
+      <option name="METHOD_NAME" value="from_throws_npe" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PredicatesTest" />
+        <item itemvalue="JUnit.StreamsTest.from_containing_null" />
+        <item itemvalue="JUnit.StreamsTest.from_infinite_iterator" />
         <item itemvalue="Gradle.pebble [spotlessJavaApply]" />
-        <item itemvalue="JUnit.PredicatesTest.CONST_false" />
-        <item itemvalue="JUnit.PredicatesTest.CONST_true" />
-        <item itemvalue="JUnit.PredicatesTest.alwaysFalse" />
+        <item itemvalue="JUnit.StreamsTest.from" />
+        <item itemvalue="JUnit.StreamsTest.from_throws_npe" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +204,7 @@
       <workItem from="1671213188178" duration="15875000" />
       <workItem from="1671284534606" duration="8585000" />
       <workItem from="1671628224034" duration="8991000" />
-      <workItem from="1671713476485" duration="48052000" />
+      <workItem from="1671713476485" duration="50284000" />
     </task>
     <servers />
   </component>

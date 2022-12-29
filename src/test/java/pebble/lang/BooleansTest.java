@@ -1,14 +1,12 @@
 package pebble.lang;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.linesOf;
 
 import java.lang.invoke.MethodHandles;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pebble.lang.Booleans;
 
 /** A test class for {@link Booleans}. */
 public class BooleansTest {

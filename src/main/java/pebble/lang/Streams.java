@@ -6,13 +6,14 @@ import java.util.Spliterators;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public final class Streams {
 
   private Streams() {}
 
   @NotNull
-  public static <T> Stream<T> from(@NotNull Iterator<T> iterator) {
+  public static <T> Stream<@Nullable T> from(@NotNull Iterator<T> iterator) {
     Objects.requireNonNull(iterator);
 
     final var spliterator = Spliterators.spliteratorUnknownSize(iterator, 0);

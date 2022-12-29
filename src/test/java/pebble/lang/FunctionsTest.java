@@ -5,12 +5,11 @@ import static org.assertj.core.api.ThrowableAssert.catchThrowable;
 
 import java.util.function.Function;
 import org.junit.jupiter.api.Test;
-import pebble.data.Option;
 
 public class FunctionsTest {
 
   @Test
-  public void safety_null_throws_exception() {
+  public void safety_throws_npe() {
     // act:
     final var actual = catchThrowable(() -> Functions.safety(null));
 
