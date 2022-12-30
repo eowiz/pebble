@@ -8,11 +8,9 @@ import org.jetbrains.annotations.Nullable;
 
 public final class Lazy<T> implements Supplier<T> {
 
-  @NotNull
-  private final Supplier<? extends @Nullable T> supplier;
+  @NotNull private final Supplier<? extends @Nullable T> supplier;
 
-  @Nullable
-  private T value;
+  @Nullable private T value;
 
   private boolean getCalled;
 
@@ -37,14 +35,15 @@ public final class Lazy<T> implements Supplier<T> {
   }
 
   @NotNull
-  public <U> Lazy<U> map(@NotNull final Function<? super @Nullable T, ? extends @Nullable U> mapping) {
+  public <U> Lazy<U> map(
+      @NotNull final Function<? super @Nullable T, ? extends @Nullable U> mapping) {
     return Lazy.of(() -> mapping.apply(this.value));
   }
 
   @NotNull
   @SuppressWarnings("unchecked")
-  public <U> Lazy<U> flatMap(@NotNull
-      final Function<? super @Nullable T, @NotNull Lazy<? extends @Nullable U>> mapping) {
+  public <U> Lazy<U> flatMap(
+      @NotNull final Function<? super @Nullable T, @NotNull Lazy<? extends @Nullable U>> mapping) {
     return (Lazy<U>) mapping.apply(this.value);
   }
 
