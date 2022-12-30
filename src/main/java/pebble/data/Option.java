@@ -233,7 +233,7 @@ public abstract class Option<T> implements Iterable<T> {
 
     @Override
     public boolean equals(@Nullable Object obj) {
-      return obj instanceof Option.Some<?> && Objects.equals(this.value, ((Some<?>) obj).value);
+      return this == obj || (obj instanceof Option.Some<?> && Objects.equals(this.value, ((Some<?>) obj).value));
     }
 
     @Override
