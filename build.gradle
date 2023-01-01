@@ -53,6 +53,15 @@ spotless {
 }
 
 publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'com.github.eowiz'
+            artifactId 'pebble'
+
+            from components.java
+        }
+    }
+
     repositories {
         maven {
             name = "GitHubPackages"
