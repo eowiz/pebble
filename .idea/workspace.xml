@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412a41c5-f8b9-457c-9dcf-cb7d761113b9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflow/publish.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/data/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/data/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Tuple2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/data/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Tuple0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/data/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/data/Tuple1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/lang/Iterators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Iterators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pebble/data/OptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pebble/data/OptionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pebble/lang/BooleansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pebble/lang/BooleansTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +49,12 @@
                 <item name="pebble" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="pebble" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -111,65 +126,64 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="StreamsTest.from" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pebble.lang.*" />
+          <option name="PATTERN" value="pebble.data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.StreamsTest" />
-      <option name="METHOD_NAME" value="from" />
+      <option name="PACKAGE_NAME" value="pebble.data" />
+      <option name="MAIN_CLASS_NAME" value="pebble.data.OptionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OptionTest.filter_none" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pebble.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pebble.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pebble.data" />
+      <option name="MAIN_CLASS_NAME" value="pebble.data.OptionTest" />
+      <option name="METHOD_NAME" value="filter_none" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamsTest.from_containing_null" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OptionTest.filter_some_false" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pebble.lang.*" />
+          <option name="PATTERN" value="pebble.data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.StreamsTest" />
-      <option name="METHOD_NAME" value="from_containing_null" />
+      <option name="PACKAGE_NAME" value="pebble.data" />
+      <option name="MAIN_CLASS_NAME" value="pebble.data.OptionTest" />
+      <option name="METHOD_NAME" value="filter_some_false" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamsTest.from_infinite_iterator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OptionTest.filter_some_true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pebble.lang.*" />
+          <option name="PATTERN" value="pebble.data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.StreamsTest" />
-      <option name="METHOD_NAME" value="from_infinite_iterator" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StreamsTest.from_throws_npe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pebble.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pebble.lang.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pebble.lang" />
-      <option name="MAIN_CLASS_NAME" value="pebble.lang.StreamsTest" />
-      <option name="METHOD_NAME" value="from_throws_npe" />
+      <option name="PACKAGE_NAME" value="pebble.data" />
+      <option name="MAIN_CLASS_NAME" value="pebble.data.OptionTest" />
+      <option name="METHOD_NAME" value="filter_some_true" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -178,10 +192,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.pebble [spotlessJavaApply]" />
-        <item itemvalue="JUnit.StreamsTest.from_containing_null" />
-        <item itemvalue="JUnit.StreamsTest.from_infinite_iterator" />
-        <item itemvalue="JUnit.StreamsTest.from" />
-        <item itemvalue="JUnit.StreamsTest.from_throws_npe" />
+        <item itemvalue="JUnit.OptionTest.filter_some_true" />
+        <item itemvalue="JUnit.OptionTest.filter_some_false" />
+        <item itemvalue="JUnit.OptionTest" />
+        <item itemvalue="JUnit.OptionTest.filter_none" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +214,9 @@
       <workItem from="1671213188178" duration="15875000" />
       <workItem from="1671284534606" duration="8585000" />
       <workItem from="1671628224034" duration="8991000" />
-      <workItem from="1671713476485" duration="54133000" />
+      <workItem from="1671713476485" duration="66291000" />
+      <workItem from="1672530729723" duration="50000" />
+      <workItem from="1672547267191" duration="289000" />
     </task>
     <servers />
   </component>
