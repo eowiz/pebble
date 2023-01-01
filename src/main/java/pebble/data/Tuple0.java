@@ -4,7 +4,7 @@ import java.util.Iterator;
 import org.jetbrains.annotations.NotNull;
 import pebble.lang.Iterators;
 
-public record Unit() implements Iterable<Void> {
+public record Tuple0() implements Iterable<Void> {
 
   @NotNull
   @Override

@@ -155,4 +155,9 @@ public final class Iterators {
 
     return iterate(seedSupplier, Function.<T>identity()::apply);
   }
+
+  @NotNull
+  public static <T> Iterable<@Nullable T> toIterable(@NotNull Iterator<@Nullable T> iterator) {
+    return () -> iterator;
+  }
 }

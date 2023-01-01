@@ -148,8 +148,8 @@ public abstract class Option<T> implements Iterable<T> {
   }
 
   @NotNull
-  public final <U> Option<Tuple<@Nullable T, @Nullable U>> zip(@Nullable U right) {
-    return this.isEmpty() ? none() : some(new Tuple<>(this.get(), right));
+  public final <U> Option<Tuple2<@Nullable T, @Nullable U>> zip(@Nullable U right) {
+    return this.isEmpty() ? none() : some(new Tuple2<>(this.get(), right));
   }
 
   private static final class None<T> extends Option<T> {

@@ -15,9 +15,15 @@ public class BooleansTest {
   private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
   @ParameterizedTest
+  // spotless:off
   @CsvSource(
-      value = {" | false", "true | true", "false | false"},
+      value = {
+          "      | false",
+          "true  | true",
+          "false | false"
+      },
       delimiter = '|')
+  // spotless:on
   void isTrue_Boolean(Boolean bool, boolean expected) {
     // arrange:
     log.info("bool = {}", bool);
@@ -31,9 +37,14 @@ public class BooleansTest {
   }
 
   @ParameterizedTest
+  // spotless:off
   @CsvSource(
-      value = {"true | true", "false| false"},
+      value = {
+          "true  | true",
+          "false | false"
+      },
       delimiter = '|')
+  // spotless:on
   void isTrue_boolean(boolean bool, boolean expected) {
     // act:
     final var actual = Booleans.isTrue(bool);
@@ -43,9 +54,15 @@ public class BooleansTest {
   }
 
   @ParameterizedTest
+  // spotless:off
   @CsvSource(
-      value = {" | false", "true | false", "false | true"},
+      value = {
+          "      | false",
+          "true  | false",
+          "false | true"
+      },
       delimiter = '|')
+  // spotless:on
   void isFalse_Boolean(Boolean bool, boolean expected) {
     // act:
     final var actual = Booleans.isFalse(bool);
@@ -55,9 +72,14 @@ public class BooleansTest {
   }
 
   @ParameterizedTest
+  // spotless:off
   @CsvSource(
-      value = {"true | false", "false | true"},
+      value = {
+          "true  | false",
+          "false | true"
+      },
       delimiter = '|')
+  // spotless:on
   void isFalse_boolean(boolean bool, boolean expected) {
     // act:
     final var actual = Booleans.isFalse(bool);
