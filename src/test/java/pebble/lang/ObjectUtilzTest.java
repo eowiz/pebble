@@ -14,7 +14,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
-public class ObjectUtilsTest {
+public class ObjectUtilzTest {
 
   @Nested
   class AnyNull {
@@ -24,7 +24,7 @@ public class ObjectUtilsTest {
       // act:
       // In most practice case, the type of the argument of ObjectUtils#anyNull is typed as Object
       // or Supplier<?>.
-      final var actual = ObjectUtils.anyNull((Object) null);
+      final var actual = ObjectUtilz.anyNull((Object) null);
 
       // assert:
       assertThat(actual).isTrue();
@@ -33,7 +33,7 @@ public class ObjectUtilsTest {
     @Test
     void direct_one_non_null_argument() {
       // act:
-      final var actual = ObjectUtils.anyNull("non-null");
+      final var actual = ObjectUtilz.anyNull("non-null");
 
       // assert:
       assertThat(actual).isFalse();
@@ -43,7 +43,7 @@ public class ObjectUtilsTest {
     @MethodSource("provider_objects")
     void object(Object[] objects, boolean expected) {
       // act:
-      final var actual = ObjectUtils.anyNull(objects);
+      final var actual = ObjectUtilz.anyNull(objects);
 
       // assert:
       assertThat(actual).isEqualTo(expected);
@@ -64,7 +64,7 @@ public class ObjectUtilsTest {
     @MethodSource("provider_supplier")
     void supplier(Supplier<Object>[] suppliers, boolean expected) {
       // act:
-      final var actual = ObjectUtils.anyNull(suppliers);
+      final var actual = ObjectUtilz.anyNull(suppliers);
 
       // assert:
       assertThat(actual).isEqualTo(expected);
@@ -83,37 +83,37 @@ public class ObjectUtilsTest {
     @SuppressWarnings({"ResultOfMethodCallIgnored", "ConfusingArgumentToVarargsMethod"})
     @Test
     void mock_direct_null_argument() {
-      try (MockedStatic<ObjectUtils> utils = Mockito.mockStatic(ObjectUtils.class)) {
+      try (MockedStatic<ObjectUtilz> utils = Mockito.mockStatic(ObjectUtilz.class)) {
         // arrange:
-        utils.when(() -> ObjectUtils.anyNull((Supplier<Object>[]) null)).thenReturn(true);
+        utils.when(() -> ObjectUtilz.anyNull((Supplier<Object>[]) null)).thenReturn(true);
 
         // act:
         // In most practice case, the type of the argument of ObjectUtils#anyNull is typed as Object
         // or Supplier<?>.
-        final var actual = ObjectUtils.anyNull(null);
+        final var actual = ObjectUtilz.anyNull(null);
 
         // assert:
         assertThat(actual).isTrue();
-        utils.verify(() -> ObjectUtils.anyNull((Supplier<Object>[]) null), times(1));
-        utils.verify(() -> ObjectUtils.anyNull((Object[]) null), times(0));
+        utils.verify(() -> ObjectUtilz.anyNull((Supplier<Object>[]) null), times(1));
+        utils.verify(() -> ObjectUtilz.anyNull((Object[]) null), times(0));
       }
     }
 
     @SuppressWarnings({"ResultOfMethodCallIgnored", "ConstantValue"})
     @Test
     void mock_indirect_null_argument_as_object() {
-      try (MockedStatic<ObjectUtils> utils = Mockito.mockStatic(ObjectUtils.class)) {
+      try (MockedStatic<ObjectUtilz> utils = Mockito.mockStatic(ObjectUtilz.class)) {
         // arrange:
         Object nullObj = null;
-        utils.when(() -> ObjectUtils.anyNull(nullObj)).thenReturn(true);
+        utils.when(() -> ObjectUtilz.anyNull(nullObj)).thenReturn(true);
 
         // act:
-        final var actual = ObjectUtils.anyNull(nullObj);
+        final var actual = ObjectUtilz.anyNull(nullObj);
 
         // assert:
         assertThat(actual).isTrue();
-        utils.verify(() -> ObjectUtils.anyNull((Supplier<Object>[]) null), times(0));
-        utils.verify(() -> ObjectUtils.anyNull((Object[]) null), times(1));
+        utils.verify(() -> ObjectUtilz.anyNull((Supplier<Object>[]) null), times(0));
+        utils.verify(() -> ObjectUtilz.anyNull((Object[]) null), times(1));
       }
     }
   }

@@ -2,9 +2,9 @@ package pebble.lang;
 
 import org.jetbrains.annotations.Nullable;
 
-public final class Booleans {
+public final class Booleanz {
 
-  private Booleans() {}
+  private Booleanz() {}
 
   public static boolean isTrue(@Nullable Boolean bool) {
     return Boolean.TRUE.equals(bool);

@@ -8,9 +8,9 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/** A test class for {@link Booleans}. */
+/** A test class for {@link Booleanz}. */
 @SuppressWarnings("java:S5786")
-public class BooleansTest {
+public class BooleanzTest {
 
   private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
@@ -30,7 +30,7 @@ public class BooleansTest {
     log.info("expected = {}", expected);
 
     // act:
-    final var actual = Booleans.isTrue(bool);
+    final var actual = Booleanz.isTrue(bool);
 
     // assert:
     assertThat(actual).isEqualTo(expected);
@@ -47,7 +47,7 @@ public class BooleansTest {
   // spotless:on
   void isTrue_boolean(boolean bool, boolean expected) {
     // act:
-    final var actual = Booleans.isTrue(bool);
+    final var actual = Booleanz.isTrue(bool);
 
     // assert:
     assertThat(actual).isEqualTo(expected);
@@ -65,7 +65,7 @@ public class BooleansTest {
   // spotless:on
   void isFalse_Boolean(Boolean bool, boolean expected) {
     // act:
-    final var actual = Booleans.isFalse(bool);
+    final var actual = Booleanz.isFalse(bool);
 
     // assert:
     assertThat(actual).isEqualTo(expected);
@@ -82,7 +82,7 @@ public class BooleansTest {
   // spotless:on
   void isFalse_boolean(boolean bool, boolean expected) {
     // act:
-    final var actual = Booleans.isFalse(bool);
+    final var actual = Booleanz.isFalse(bool);
 
     // assert:
     assertThat(actual).isEqualTo(expected);

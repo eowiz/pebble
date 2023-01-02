@@ -2,13 +2,13 @@ package pebble.data;
 
 import java.util.Iterator;
 import org.jetbrains.annotations.NotNull;
-import pebble.lang.Iterators;
+import pebble.lang.Iteratorz;
 
 public record Tuple0() implements Iterable<Void> {
 
   @NotNull
   @Override
   public Iterator<Void> iterator() {
-    return Iterators.empty();
+    return Iteratorz.empty();
   }
 }

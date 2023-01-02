@@ -9,13 +9,13 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 @SuppressWarnings("java:S5786")
-public class PredicatesTest {
+public class PredicatezTest {
 
   @ParameterizedTest
   @MethodSource("provider_CONST_true")
   void CONST_true(Object object) {
     // arrange:
-    final var CONST = Predicates.CONST(true);
+    final var CONST = Predicatez.CONST(true);
 
     // act:
     final var actual = CONST.test(object);
@@ -33,7 +33,7 @@ public class PredicatesTest {
   @MethodSource("provider_CONST_false")
   void CONST_false(Object object) {
     // arrange:
-    final var CONST = Predicates.CONST(false);
+    final var CONST = Predicatez.CONST(false);
 
     // act:
     final var actual = CONST.test(object);
@@ -53,7 +53,7 @@ public class PredicatesTest {
     // arrange:
 
     // act:
-    final var actual = Predicates.alwaysTrue().test(object);
+    final var actual = Predicatez.alwaysTrue().test(object);
 
     // assert:
     assertThat(actual).isTrue();
@@ -70,7 +70,7 @@ public class PredicatesTest {
     // arrange:
 
     // act:
-    final var actual = Predicates.alwaysFalse().test(object);
+    final var actual = Predicatez.alwaysFalse().test(object);
 
     // assert:
     assertThat(actual).isFalse();

@@ -12,11 +12,11 @@ import java.util.function.UnaryOperator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class Iterators {
+public final class Iteratorz {
 
   private static final Object NONE = new Object();
 
-  private Iterators() {}
+  private Iteratorz() {}
 
   @NotNull
   public static <T> Iterator<@Nullable T> empty() {

@@ -12,9 +12,9 @@ import org.jetbrains.annotations.Nullable;
  * @since 1.0.0
  * @author eowiz
  */
-public final class ObjectUtils {
+public final class ObjectUtilz {
 
-  private ObjectUtils() {}
+  private ObjectUtilz() {}
 
   public static boolean allNull(@Nullable Object... objects) {
     if (objects == null) {

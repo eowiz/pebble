@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import pebble.lang.Iterators;
+import pebble.lang.Iteratorz;
 
 /**
  * Alternative of {@link java.util.Optional}.
@@ -218,7 +218,7 @@ public abstract class Option<T> implements Iterable<T> {
     @NotNull
     @Override
     public Iterator<@Nullable T> iterator() {
-      return Iterators.iterate(this.value);
+      return Iteratorz.iterate(this.value);
     }
 
     @NotNull

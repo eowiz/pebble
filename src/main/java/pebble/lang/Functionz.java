@@ -5,9 +5,9 @@ import java.util.function.Function;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class Functions {
+public final class Functionz {
 
-  private Functions() {}
+  private Functionz() {}
 
   @NotNull
   public static <T, U> Function<@Nullable T, @Nullable U> safety(

@@ -8,9 +8,9 @@ import java.util.stream.StreamSupport;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class Streams {
+public final class Streamz {
 
-  private Streams() {}
+  private Streamz() {}
 
   @NotNull
   public static <T> Stream<@Nullable T> from(@NotNull Iterator<T> iterator) {

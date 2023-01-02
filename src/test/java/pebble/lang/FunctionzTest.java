@@ -7,13 +7,13 @@ import java.util.function.Function;
 import org.junit.jupiter.api.Test;
 
 @SuppressWarnings("java:S5786")
-public class FunctionsTest {
+public class FunctionzTest {
 
   @Test
   void safety_throws_npe() {
     // act:
     @SuppressWarnings({"ConstantConditions", "ResultOfMethodCallIgnored"})
-    final var actual = catchThrowable(() -> Functions.safety(null));
+    final var actual = catchThrowable(() -> Functionz.safety(null));
 
     // assert:
     assertThat(actual).isInstanceOf(NullPointerException.class);
@@ -25,7 +25,7 @@ public class FunctionsTest {
     Function<Integer, String> f = Object::toString;
 
     // act:
-    final var actualSafety = Functions.safety(f);
+    final var actualSafety = Functionz.safety(f);
     final var actual = actualSafety.apply(null);
 
     // assert:

@@ -3,9 +3,9 @@ package pebble.lang;
 import java.util.function.Predicate;
 import org.jetbrains.annotations.NotNull;
 
-public final class Predicates {
+public final class Predicatez {
 
-  private Predicates() {}
+  private Predicatez() {}
 
   @SuppressWarnings("java:S100")
   @NotNull

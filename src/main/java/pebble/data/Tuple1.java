@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import pebble.lang.Iterators;
+import pebble.lang.Iteratorz;
 
 @SuppressWarnings("java:S117")
 public record Tuple1<T>(@Nullable T _1) implements Iterable<T> {
@@ -48,7 +48,7 @@ public record Tuple1<T>(@Nullable T _1) implements Iterable<T> {
   @NotNull
   @Override
   public Iterator<T> iterator() {
-    return Iterators.singleton(_1);
+    return Iteratorz.singleton(_1);
   }
 
   @Override

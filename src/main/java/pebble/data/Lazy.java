@@ -6,6 +6,11 @@ import java.util.function.Supplier;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ *
+ * @param <T>
+ * @see <a href="https://github.com/spring-projects/spring-data-commons/blob/3.0.0/src/main/java/org/springframework/data/util/Lazy.java">Lazy.java</a>
+ */
 public final class Lazy<T> implements Supplier<T> {
 
   @NotNull private final Supplier<? extends @Nullable T> supplier;
@@ -57,6 +62,7 @@ public final class Lazy<T> implements Supplier<T> {
       return false;
     }
 
+    @SuppressWarnings("PatternVariableCanBeUsed")
     final var lazy = (Lazy<?>) obj;
 
     if (this.getCalled != lazy.getCalled) {

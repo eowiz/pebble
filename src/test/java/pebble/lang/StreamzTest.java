@@ -11,7 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 @SuppressWarnings("java:S5786")
 @ExtendWith(SoftAssertionsExtension.class)
-public class StreamsTest {
+public class StreamzTest {
 
   @InjectSoftAssertions private SoftAssertions softly;
 
@@ -19,7 +19,7 @@ public class StreamsTest {
   void from_throws_npe() {
     // act:
     @SuppressWarnings("ConstantConditions")
-    final var actual = catchThrowable(() -> Streams.from(null));
+    final var actual = catchThrowable(() -> Streamz.from(null));
 
     // assert:
     assertThat(actual).isInstanceOf(NullPointerException.class);
@@ -28,10 +28,10 @@ public class StreamsTest {
   @Test
   void from_fixed_size_iterator() {
     // arrange:
-    final var iterator = Iterators.iterate(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    final var iterator = Iteratorz.iterate(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
     // act:
-    final var actual = Streams.from(iterator);
+    final var actual = Streamz.from(iterator);
     final var actualList = actual.toList();
 
     // arrange:
@@ -42,10 +42,10 @@ public class StreamsTest {
   @Test
   void from_containing_null() {
     // arrange:
-    final var iterator = Iterators.iterate(1, 2, null, 4, null);
+    final var iterator = Iteratorz.iterate(1, 2, null, 4, null);
 
     // act:
-    final var actual = Streams.from(iterator);
+    final var actual = Streamz.from(iterator);
     final var actualList = actual.toList();
 
     // assert:
@@ -56,10 +56,10 @@ public class StreamsTest {
   @Test
   void from_infinite_iterator() {
     // arrange:
-    final var iterator = Iterators.generate(1);
+    final var iterator = Iteratorz.generate(1);
 
     // act:
-    final var actual = Streams.from(iterator);
+    final var actual = Streamz.from(iterator);
     final var actualList = actual.limit(10).toList();
 
     // assert:
