@@ -21,7 +21,8 @@ public interface ExceptionalFunction<T, R> {
     };
   }
 
-  static <T, R> Function<T, R> Try(@NotNull ExceptionalFunction<? super @Nullable T, ? extends @Nullable R> onTry,
+  static <T, R> Function<T, R> Try(
+      @NotNull ExceptionalFunction<? super @Nullable T, ? extends @Nullable R> onTry,
       @NotNull BiFunction<Exception, @Nullable T, @Nullable R> onCatch) {
     return t -> {
       try {

@@ -36,10 +36,8 @@ public class Filez {
   public static Stream<Path> listGlobs(Path root, String... globs) throws IOException {
     final var fileSystem = FileSystems.getDefault();
 
-    final var pathMatchers = Arrays.stream(globs)
-        .map(it -> "glob:" + it)
-        .map(fileSystem::getPathMatcher)
-        .toList();
+    final var pathMatchers =
+        Arrays.stream(globs).map(it -> "glob:" + it).map(fileSystem::getPathMatcher).toList();
 
     final var visitor = new GlobFileVisitor(pathMatchers);
     Files.walkFileTree(root, visitor);
@@ -66,8 +64,7 @@ public class Filez {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-      final var isMatch = pathMatchers.stream()
-          .anyMatch(matcher -> matcher.matches(file));
+      final var isMatch = pathMatchers.stream().anyMatch(matcher -> matcher.matches(file.normalize()));
 
       if (isMatch) {
         this.matchedPathsBuilder.add(file);
