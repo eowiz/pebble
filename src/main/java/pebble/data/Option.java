@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import pebble.lang.Iteratorz;
@@ -150,6 +151,11 @@ public abstract class Option<T> implements Iterable<T> {
   @NotNull
   public final <U> Option<Tuple2<@Nullable T, @Nullable U>> zip(@Nullable U right) {
     return this.isEmpty() ? none() : some(new Tuple2<>(this.get(), right));
+  }
+
+  @NotNull
+  public final Stream<@Nullable T> stream() {
+    return isEmpty() ? Stream.empty() : Stream.ofNullable(this.get());
   }
 
   private static final class None<T> extends Option<T> {

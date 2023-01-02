@@ -49,7 +49,7 @@ public abstract class Either<L, R> {
   }
 
   @NotNull
-  public Option<@Nullable R> toOption() {
+  public Option<@Nullable R> option() {
     return isLeft() ? Option.none() : Option.some(getRight());
   }
 
