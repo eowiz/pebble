@@ -25,21 +25,24 @@ public record Tuple2<T, U>(@Nullable T _1, @Nullable U _2) {
   }
 
   @NotNull
-  public <V> Tuple2<@Nullable T, @Nullable V> map(@NotNull Function<? super U, ? extends V> mapping) {
+  public <V> Tuple2<@Nullable T, @Nullable V> map(
+      @NotNull Function<? super U, ? extends V> mapping) {
     Objects.requireNonNull(mapping);
 
     return new Tuple2<>(this._1, mapping.apply(this._2));
   }
 
   @NotNull
-  public <V> Tuple2<@Nullable T, @Nullable V> rightMap(@NotNull Function<? super U, ? extends V> mapping) {
+  public <V> Tuple2<@Nullable T, @Nullable V> rightMap(
+      @NotNull Function<? super U, ? extends V> mapping) {
     Objects.requireNonNull(mapping);
 
     return this.map(mapping);
   }
 
   @NotNull
-  public <V> Tuple2<@Nullable V, @Nullable U> leftMap(@NotNull Function<? super T, ? extends V> mapping) {
+  public <V> Tuple2<@Nullable V, @Nullable U> leftMap(
+      @NotNull Function<? super T, ? extends V> mapping) {
     Objects.requireNonNull(mapping);
 
     return new Tuple2<>(mapping.apply(this._1), this._2);

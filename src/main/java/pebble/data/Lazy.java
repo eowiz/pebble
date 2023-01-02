@@ -7,9 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- *
  * @param <T>
- * @see <a href="https://github.com/spring-projects/spring-data-commons/blob/3.0.0/src/main/java/org/springframework/data/util/Lazy.java">Lazy.java</a>
+ * @see <a
+ *     href="https://github.com/spring-projects/spring-data-commons/blob/3.0.0/src/main/java/org/springframework/data/util/Lazy.java">Lazy.java</a>
  */
 public final class Lazy<T> implements Supplier<T> {
 

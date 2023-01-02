@@ -48,6 +48,11 @@ public abstract class Either<L, R> {
         : (Either<L, U>) mapper.apply(this.getRight());
   }
 
+  @NotNull
+  public Option<@Nullable R> toOption() {
+    return isLeft() ? Option.none() : Option.some(getRight());
+  }
+
   private Either() {}
 
   private static class Left<L, R> extends Either<L, R> {
