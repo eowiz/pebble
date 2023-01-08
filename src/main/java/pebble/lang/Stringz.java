@@ -42,7 +42,7 @@ public final class Stringz {
 
   @Nullable
   public static String defaultIfEmpty(
-      @Nullable String string, @NotNull Supplier<String> defaultSupplier) {
+      @Nullable String string, @NotNull Supplier<@Nullable String> defaultSupplier) {
     Objects.requireNonNull(defaultSupplier);
 
     if (isEmpty(string)) {
@@ -68,7 +68,7 @@ public final class Stringz {
 
   @Nullable
   public static String defaultString(
-      @Nullable String string, @NotNull Supplier<String> defaultSupplier) {
+      @Nullable String string, @NotNull Supplier<@Nullable String> defaultSupplier) {
     Objects.requireNonNull(defaultSupplier);
 
     if (string == null) {

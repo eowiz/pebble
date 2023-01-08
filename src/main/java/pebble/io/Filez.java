@@ -12,13 +12,18 @@ import java.nio.file.PathMatcher;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
+import org.jetbrains.annotations.NotNull;
 
-public class Filez {
+public final class Filez {
 
   private Filez() {}
 
-  public static Stream<Path> listPaths(Path path) throws NotDirectoryException {
+  @NotNull
+  public static Stream<@NotNull Path> listPaths(@NotNull Path path) throws NotDirectoryException {
+    Objects.requireNonNull(path);
+
     final var file = path.toFile();
     final var files = file.listFiles();
 
@@ -29,11 +34,19 @@ public class Filez {
     return Arrays.stream(files).map(File::toPath);
   }
 
-  public static Stream<Path> listPaths(String first, String... more) throws NotDirectoryException {
+  @NotNull
+  public static Stream<@NotNull Path> listPaths(@NotNull String first, @NotNull String... more) throws NotDirectoryException {
+    Objects.requireNonNull(first);
+    Objects.requireNonNull(more);
+
     return listPaths(Path.of(first, more));
   }
 
-  public static Stream<Path> listGlobs(Path root, String... globs) throws IOException {
+  @NotNull
+  public static Stream<@NotNull Path> listGlobs(@NotNull Path root, @NotNull String... globs) throws IOException {
+    Objects.requireNonNull(root);
+    Objects.requireNonNull(globs);
+
     final var fileSystem = FileSystems.getDefault();
 
     final var pathMatchers =
@@ -47,11 +60,13 @@ public class Filez {
 
   static class GlobFileVisitor implements FileVisitor<Path> {
 
-    final List<PathMatcher> pathMatchers;
+    @NotNull
+    final List<@NotNull PathMatcher> pathMatchers;
 
-    final Stream.Builder<Path> matchedPathsBuilder;
+    @NotNull
+    final Stream.Builder<@NotNull Path> matchedPathsBuilder;
 
-    GlobFileVisitor(List<PathMatcher> pathMatchers) {
+    GlobFileVisitor(@NotNull List<@NotNull PathMatcher> pathMatchers) {
       this.pathMatchers = pathMatchers;
       this.matchedPathsBuilder = Stream.builder();
     }
@@ -64,8 +79,8 @@ public class Filez {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-      final var isMatch =
-          pathMatchers.stream().anyMatch(matcher -> matcher.matches(file.normalize()));
+      final var normalized = file.normalize();
+      final var isMatch = pathMatchers.stream().anyMatch(matcher -> matcher.matches(normalized));
 
       if (isMatch) {
         this.matchedPathsBuilder.add(file);

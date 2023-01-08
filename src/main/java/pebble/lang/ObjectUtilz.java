@@ -104,7 +104,7 @@ public final class ObjectUtilz {
 
   @Nullable
   public static <T> T defaultIfNull(
-      @Nullable T object, @NotNull Supplier<? extends T> defaultSupplier) {
+      @Nullable T object, @NotNull Supplier<? extends @Nullable T> defaultSupplier) {
     Objects.requireNonNull(defaultSupplier);
 
     if (object != null) {

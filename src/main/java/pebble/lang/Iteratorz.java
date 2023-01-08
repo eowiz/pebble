@@ -85,9 +85,9 @@ public final class Iteratorz {
 
   @NotNull
   public static <T> Iterator<@Nullable T> iterate(
-      @NotNull Supplier<T> seedSupplier,
-      @NotNull Predicate<? super T> hasNext,
-      @NotNull UnaryOperator<T> next) {
+      @NotNull Supplier<@Nullable T> seedSupplier,
+      @NotNull Predicate<? super @Nullable T> hasNext,
+      @NotNull UnaryOperator<@Nullable T> next) {
     Objects.requireNonNull(hasNext);
     Objects.requireNonNull(next);
 
@@ -131,6 +131,7 @@ public final class Iteratorz {
         return true;
       }
 
+      @Nullable
       @Override
       public T next() {
         if (!this.hasNext()) {
@@ -158,6 +159,8 @@ public final class Iteratorz {
 
   @NotNull
   public static <T> Iterable<@Nullable T> toIterable(@NotNull Iterator<@Nullable T> iterator) {
+    Objects.requireNonNull(iterator);
+
     return () -> iterator;
   }
 }

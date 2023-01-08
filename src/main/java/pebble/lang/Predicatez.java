@@ -2,6 +2,7 @@ package pebble.lang;
 
 import java.util.function.Predicate;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public final class Predicatez {
 
@@ -9,17 +10,17 @@ public final class Predicatez {
 
   @SuppressWarnings("java:S100")
   @NotNull
-  public static <T> Predicate<T> CONST(boolean bool) {
+  public static <T> Predicate<@Nullable T> CONST(boolean bool) {
     return ignore -> bool;
   }
 
   @NotNull
-  public static <T> Predicate<T> alwaysTrue() {
+  public static <T> Predicate<@Nullable T> alwaysTrue() {
     return ignore -> true;
   }
 
   @NotNull
-  public static <T> Predicate<T> alwaysFalse() {
+  public static <T> Predicate<@Nullable T> alwaysFalse() {
     return ignore -> false;
   }
 }

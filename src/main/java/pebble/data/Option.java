@@ -67,12 +67,14 @@ public abstract class Option<T> implements Iterable<T> {
     return !this.isEmpty();
   }
 
-  public final Option<T> nullToNone() {
+  @NotNull
+  public final Option<@Nullable T> nullToNone() {
     return (this.isEmpty() || this.get() != null) ? this : none();
   }
 
   @NotNull
-  public final <U> Option<@Nullable U> map(@NotNull Function<? super T, ? extends U> mapping) {
+  public final <U> Option<@Nullable U> map(
+      @NotNull Function<? super @Nullable T, ? extends @Nullable U> mapping) {
     Objects.requireNonNull(mapping);
 
     return this.isEmpty() ? none() : some(mapping.apply(this.get()));
@@ -88,7 +90,7 @@ public abstract class Option<T> implements Iterable<T> {
   }
 
   @NotNull
-  public final Option<@Nullable T> filter(@NotNull Predicate<T> predicate) {
+  public final Option<@Nullable T> filter(@NotNull Predicate<@Nullable T> predicate) {
     Objects.requireNonNull(predicate);
 
     if (this.isEmpty()) {
@@ -99,7 +101,7 @@ public abstract class Option<T> implements Iterable<T> {
   }
 
   @NotNull
-  public final Option<@Nullable T> filterNot(@NotNull Predicate<T> predicate) {
+  public final Option<@Nullable T> filterNot(@NotNull Predicate<@Nullable T> predicate) {
     Objects.requireNonNull(predicate);
 
     return this.filter(Predicate.not(predicate));
@@ -118,15 +120,15 @@ public abstract class Option<T> implements Iterable<T> {
   }
 
   @NotNull
-  public final Option<@Nullable T> or(@NotNull Option<T> another) {
+  public final Option<@Nullable T> or(@NotNull Option<@Nullable T> another) {
     Objects.requireNonNull(another);
 
     return this.isEmpty() ? another : this;
   }
 
   @Nullable
-  public final <X extends Throwable> T orElseThrow(@NotNull Supplier<? extends X> exceptionSupplier)
-      throws X {
+  public final <X extends Throwable> T orElseThrow(
+      @NotNull Supplier<? extends @Nullable X> exceptionSupplier) throws X {
     Objects.requireNonNull(exceptionSupplier);
 
     if (this.isEmpty()) {

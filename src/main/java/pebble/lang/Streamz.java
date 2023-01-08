@@ -13,7 +13,7 @@ public final class Streamz {
   private Streamz() {}
 
   @NotNull
-  public static <T> Stream<@Nullable T> from(@NotNull Iterator<T> iterator) {
+  public static <T> Stream<@Nullable T> from(@NotNull Iterator<@Nullable T> iterator) {
     Objects.requireNonNull(iterator);
 
     final var spliterator = Spliterators.spliteratorUnknownSize(iterator, 0);

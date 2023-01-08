@@ -31,7 +31,7 @@ public abstract class Either<L, R> {
 
   @NotNull
   public final <U> Either<@Nullable L, @Nullable U> map(
-      @NotNull Function<? super R, ? extends U> mapper) {
+      @NotNull Function<? super @Nullable R, ? extends @Nullable U> mapper) {
     Objects.requireNonNull(mapper);
 
     return this.isLeft() ? leftOf(this.getLeft()) : rightOf(mapper.apply(this.getRight()));
@@ -40,7 +40,11 @@ public abstract class Either<L, R> {
   @NotNull
   @SuppressWarnings("unchecked")
   public final <U> Either<@Nullable L, @Nullable U> flatMap(
-      @NotNull Function<? super R, ? extends Either<L, ? extends U>> mapper) {
+      @NotNull
+          Function<
+                  ? super @Nullable R,
+                  ? extends @NotNull Either<@Nullable L, ? extends @Nullable U>>
+              mapper) {
     Objects.requireNonNull(mapper);
 
     return this.isLeft()
@@ -68,6 +72,7 @@ public abstract class Either<L, R> {
       return true;
     }
 
+    @Nullable
     @Override
     public L getLeft() {
       return this.value;
@@ -97,6 +102,7 @@ public abstract class Either<L, R> {
       throw new UnsupportedOperationException();
     }
 
+    @Nullable
     @Override
     public R getRight() {
       return this.value;

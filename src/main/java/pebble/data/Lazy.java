@@ -35,19 +35,19 @@ public final class Lazy<T> implements Supplier<T> {
   }
 
   @NotNull
-  public static <T> Lazy<T> of(@NotNull final Supplier<@Nullable T> supplier) {
+  public static <T> Lazy<@Nullable T> of(@NotNull final Supplier<@Nullable T> supplier) {
     return new Lazy<>(supplier);
   }
 
   @NotNull
-  public <U> Lazy<U> map(
+  public <U> Lazy<@Nullable U> map(
       @NotNull final Function<? super @Nullable T, ? extends @Nullable U> mapping) {
     return Lazy.of(() -> mapping.apply(this.value));
   }
 
   @NotNull
   @SuppressWarnings("unchecked")
-  public <U> Lazy<U> flatMap(
+  public <U> Lazy<@Nullable U> flatMap(
       @NotNull final Function<? super @Nullable T, @NotNull Lazy<? extends @Nullable U>> mapping) {
     return (Lazy<U>) mapping.apply(this.value);
   }

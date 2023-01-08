@@ -13,15 +13,13 @@ import org.jetbrains.annotations.Nullable;
  */
 public class ExceptionCatch<T, R> {
 
-  private final Class<? extends Exception> exception;
+  private final Class<? extends @NotNull Exception> exception;
 
-  private final BiFunction<? super Exception, ? super T, ? extends R> biFunction;
+  private final BiFunction<@NotNull Exception, @Nullable T, @Nullable R> biFunction;
 
   public ExceptionCatch(
       @NotNull Class<? extends @NotNull Exception> exception,
-      @NotNull
-          BiFunction<? super @NotNull Exception, ? super @Nullable T, ? extends @Nullable R>
-              biFunction) {
+      @NotNull BiFunction<@NotNull Exception, @Nullable T, @Nullable R> biFunction) {
     Objects.requireNonNull(exception);
     Objects.requireNonNull(biFunction);
 
@@ -35,7 +33,7 @@ public class ExceptionCatch<T, R> {
   }
 
   @NotNull
-  public BiFunction<? super Exception, ? super T, ? extends R> getBiFunction() {
+  public BiFunction<Exception, T, R> getBiFunction() {
     return this.biFunction;
   }
 

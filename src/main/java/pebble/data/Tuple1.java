@@ -12,15 +12,21 @@ import pebble.lang.Iteratorz;
 public record Tuple1<T>(@Nullable T _1) implements Iterable<T> {
 
   @NotNull
-  public <U> Tuple1<@Nullable U> map(@NotNull Function<? super T, ? extends U> mapping) {
-    return new Tuple1<>(mapping.apply(_1));
+  public static <T> Tuple1<@Nullable T> of(@Nullable T _1) {
+    return new Tuple1<>(_1);
+  }
+
+  @NotNull
+  public <U> Tuple1<@Nullable U> map(
+      @NotNull Function<? super @Nullable T, ? extends @Nullable U> mapping) {
+    return new Tuple1<>(mapping.apply(this._1));
   }
 
   @NotNull
   @SuppressWarnings("unchecked")
   public <U> Tuple1<@Nullable U> flatMap(
-      @NotNull Function<? super T, Tuple1<? extends U>> mapping) {
-    return (Tuple1<U>) mapping.apply(_1);
+      @NotNull Function<? super @Nullable T, Tuple1<? extends @Nullable U>> mapping) {
+    return (Tuple1<U>) mapping.apply(this._1);
   }
 
   @NotNull
@@ -30,7 +36,7 @@ public record Tuple1<T>(@Nullable T _1) implements Iterable<T> {
 
   @NotNull
   public Tuple1<@Nullable T> replaceIfNull(@Nullable T replacement) {
-    if (_1 == null) {
+    if (this._1 == null) {
       return new Tuple1<>(replacement);
     }
 
@@ -47,24 +53,25 @@ public record Tuple1<T>(@Nullable T _1) implements Iterable<T> {
 
   @NotNull
   @Override
-  public Iterator<T> iterator() {
-    return Iteratorz.singleton(_1);
+  public Iterator<@Nullable T> iterator() {
+    return Iteratorz.singleton(this._1);
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object object) {
+    if (this == object) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (object == null || getClass() != object.getClass()) {
       return false;
     }
-    Tuple1<?> value = (Tuple1<?>) o;
-    return Objects.equals(_1, value._1);
+
+    Tuple1<?> that = (Tuple1<?>) object;
+    return Objects.equals(this._1, that._1);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_1);
+    return Objects.hash(this._1);
   }
 }
