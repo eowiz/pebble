@@ -64,7 +64,8 @@ public class Filez {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-      final var isMatch = pathMatchers.stream().anyMatch(matcher -> matcher.matches(file.normalize()));
+      final var isMatch =
+          pathMatchers.stream().anyMatch(matcher -> matcher.matches(file.normalize()));
 
       if (isMatch) {
         this.matchedPathsBuilder.add(file);
