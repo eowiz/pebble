@@ -9,9 +9,9 @@ import pebble.data.Either;
 import pebble.data.ExceptionCatch;
 import pebble.data.ExceptionalFunction;
 
-public final class Exceptionz {
+public final class ExceptionOps {
 
-  private Exceptionz() {}
+  private ExceptionOps() {}
 
   @NotNull
   public static <T, R> Function<@Nullable T, @NotNull Either<@NotNull Exception, @Nullable R>> Try(
