@@ -35,7 +35,8 @@ public final class Filez {
   }
 
   @NotNull
-  public static Stream<@NotNull Path> listPaths(@NotNull String first, @NotNull String... more) throws NotDirectoryException {
+  public static Stream<@NotNull Path> listPaths(@NotNull String first, @NotNull String... more)
+      throws NotDirectoryException {
     Objects.requireNonNull(first);
     Objects.requireNonNull(more);
 
@@ -43,7 +44,8 @@ public final class Filez {
   }
 
   @NotNull
-  public static Stream<@NotNull Path> listGlobs(@NotNull Path root, @NotNull String... globs) throws IOException {
+  public static Stream<@NotNull Path> listGlobs(@NotNull Path root, @NotNull String... globs)
+      throws IOException {
     Objects.requireNonNull(root);
     Objects.requireNonNull(globs);
 
@@ -60,11 +62,9 @@ public final class Filez {
 
   static class GlobFileVisitor implements FileVisitor<Path> {
 
-    @NotNull
-    final List<@NotNull PathMatcher> pathMatchers;
+    @NotNull final List<@NotNull PathMatcher> pathMatchers;
 
-    @NotNull
-    final Stream.Builder<@NotNull Path> matchedPathsBuilder;
+    @NotNull final Stream.Builder<@NotNull Path> matchedPathsBuilder;
 
     GlobFileVisitor(@NotNull List<@NotNull PathMatcher> pathMatchers) {
       this.pathMatchers = pathMatchers;
