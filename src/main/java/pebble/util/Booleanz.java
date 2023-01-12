@@ -1,4 +1,4 @@
-package pebble.lang;
+package pebble.util;
 
 import org.jetbrains.annotations.Nullable;
 

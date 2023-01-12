@@ -1,4 +1,4 @@
-package pebble.lang;
+package pebble.util;
 
 import java.util.function.Predicate;
 import org.jetbrains.annotations.NotNull;

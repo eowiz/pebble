@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import pebble.lang.Iteratorz;
+import pebble.util.Iteratorz;
 
 /**
  * Alternative of {@link java.util.Optional}.

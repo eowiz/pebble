@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="412a41c5-f8b9-457c-9dcf-cb7d761113b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pebble/lang/Listz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pebble/lang/ExceptionOpsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pebble/io/Filez.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pebble/io/Filez.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,91 +96,81 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.pebble [spotlessJavaApply]">
-    <configuration name="pebble [spotlessApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="spotlessApply" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="pebble [spotlessJavaApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="spotlessJavaApply" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="OptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ExceptionOpsTest">
+    <configuration name="ExceptionOpsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pebble.data.*" />
+          <option name="PATTERN" value="pebble.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pebble.data" />
-      <option name="MAIN_CLASS_NAME" value="pebble.data.OptionTest" />
+      <option name="PACKAGE_NAME" value="pebble.lang" />
+      <option name="MAIN_CLASS_NAME" value="pebble.util.ExceptionOpsTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OptionTest.filter_some_false" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExceptionOpsTest.try_" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pebble.data.*" />
+          <option name="PATTERN" value="pebble.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pebble.data" />
-      <option name="MAIN_CLASS_NAME" value="pebble.data.OptionTest" />
-      <option name="METHOD_NAME" value="filter_some_false" />
+      <option name="PACKAGE_NAME" value="pebble.lang" />
+      <option name="MAIN_CLASS_NAME" value="pebble.util.ExceptionOpsTest" />
+      <option name="METHOD_NAME" value="try_" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OptionTest.filter_some_true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExceptionOpsTest.try_returns_Left_when_function_throws_exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pebble.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pebble.data.*" />
+          <option name="PATTERN" value="pebble.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pebble.data" />
-      <option name="MAIN_CLASS_NAME" value="pebble.data.OptionTest" />
-      <option name="METHOD_NAME" value="filter_some_true" />
+      <option name="PACKAGE_NAME" value="pebble.lang" />
+      <option name="MAIN_CLASS_NAME" value="pebble.util.ExceptionOpsTest" />
+      <option name="METHOD_NAME" value="try_returns_Left_when_function_throws_exception" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExceptionOpsTest.try_returns_Right_when_the_lambda_does_not_throw_exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pebble.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pebble.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pebble.lang" />
+      <option name="MAIN_CLASS_NAME" value="pebble.util.ExceptionOpsTest" />
+      <option name="METHOD_NAME" value="try_returns_Right_when_the_lambda_does_not_throw_exception" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExceptionOpsTest.try_returns_left_when_function_throws_exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pebble.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pebble.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pebble.lang" />
+      <option name="MAIN_CLASS_NAME" value="pebble.util.ExceptionOpsTest" />
+      <option name="METHOD_NAME" value="try_returns_left_when_function_throws_exception" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -189,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.pebble [spotlessJavaApply]" />
-        <item itemvalue="Gradle.pebble [spotlessApply]" />
-        <item itemvalue="JUnit.OptionTest.filter_some_true" />
-        <item itemvalue="JUnit.OptionTest.filter_some_false" />
-        <item itemvalue="JUnit.OptionTest" />
+        <item itemvalue="JUnit.ExceptionOpsTest" />
+        <item itemvalue="JUnit.ExceptionOpsTest.try_returns_Right_when_the_lambda_does_not_throw_exception" />
+        <item itemvalue="JUnit.ExceptionOpsTest.try_returns_Left_when_function_throws_exception" />
+        <item itemvalue="JUnit.ExceptionOpsTest.try_returns_left_when_function_throws_exception" />
+        <item itemvalue="JUnit.ExceptionOpsTest.try_" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +207,7 @@
       <workItem from="1672675163014" duration="9118000" />
       <workItem from="1672942630846" duration="437000" />
       <workItem from="1672943202766" duration="601000" />
-      <workItem from="1673164650197" duration="9926000" />
+      <workItem from="1673164650197" duration="11831000" />
     </task>
     <servers />
   </component>

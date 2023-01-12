@@ -1,4 +1,4 @@
-package pebble.lang;
+package pebble.util;
 
 import java.util.Objects;
 import java.util.function.Supplier;

@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import pebble.lang.Iteratorz;
+import pebble.util.Iteratorz;
 
 @SuppressWarnings("java:S117")
 public record Tuple1<T>(@Nullable T _1) implements Iterable<T> {

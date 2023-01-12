@@ -2,7 +2,7 @@ package pebble.data;
 
 import java.util.Iterator;
 import org.jetbrains.annotations.NotNull;
-import pebble.lang.Iteratorz;
+import pebble.util.Iteratorz;
 
 public record Tuple0() implements Iterable<Void> {
 
