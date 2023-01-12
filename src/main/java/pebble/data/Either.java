@@ -4,8 +4,10 @@ import java.util.Objects;
 import java.util.function.Function;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import pebble.data.Either.Left;
+import pebble.data.Either.Right;
 
-public abstract class Either<L, R> {
+public abstract sealed class Either<L, R> permits Left, Right {
 
   public abstract boolean isLeft();
 
@@ -59,7 +61,7 @@ public abstract class Either<L, R> {
 
   private Either() {}
 
-  private static class Left<L, R> extends Either<L, R> {
+  static final class Left<L, R> extends Either<L, R> {
 
     @Nullable private final L value;
 
@@ -84,7 +86,7 @@ public abstract class Either<L, R> {
     }
   }
 
-  private static class Right<L, R> extends Either<L, R> {
+  static final class Right<L, R> extends Either<L, R> {
 
     @Nullable private final R value;
 

@@ -11,6 +11,8 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import pebble.data.Option.None;
+import pebble.data.Option.Some;
 import pebble.util.Iteratorz;
 
 /**
@@ -24,7 +26,7 @@ import pebble.util.Iteratorz;
  * @since 1.0.0
  */
 @SuppressWarnings("java:S1610")
-public abstract class Option<T> implements Iterable<T> {
+public abstract sealed class Option<T> implements Iterable<T> permits Some, None {
 
   private Option() {}
 
@@ -59,7 +61,7 @@ public abstract class Option<T> implements Iterable<T> {
   }
 
   @NotNull
-  public final Optional<@NotNull T> toOptional() {
+  public final Optional<@NotNull T> asJava() {
     return isEmpty() ? Optional.empty() : Optional.ofNullable(get());
   }
 
@@ -160,7 +162,7 @@ public abstract class Option<T> implements Iterable<T> {
     return isEmpty() ? Stream.empty() : Stream.ofNullable(this.get());
   }
 
-  private static final class None<T> extends Option<T> {
+  static final class None<T> extends Option<T> {
 
     private static final None<?> SINGLETON = new None<>();
 
@@ -204,7 +206,7 @@ public abstract class Option<T> implements Iterable<T> {
     }
   }
 
-  private static final class Some<T> extends Option<T> {
+  static final class Some<T> extends Option<T> {
 
     @Nullable private final T value;
 
