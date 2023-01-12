@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import pebble.data.Either;
 import pebble.data.ExceptionCatch;
-import pebble.data.ExceptionalFunction;
+import pebble.function.ExceptionalFunction;
 
 public final class ExceptionOps {
 
