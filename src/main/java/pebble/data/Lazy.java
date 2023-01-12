@@ -20,6 +20,8 @@ public final class Lazy<T> implements Supplier<T> {
   private boolean getCalled;
 
   private Lazy(@NotNull final Supplier<? extends @Nullable T> supplier) {
+    Objects.requireNonNull(supplier);
+
     this.supplier = supplier;
   }
 
@@ -36,12 +38,16 @@ public final class Lazy<T> implements Supplier<T> {
 
   @NotNull
   public static <T> Lazy<@Nullable T> of(@NotNull final Supplier<@Nullable T> supplier) {
+    Objects.requireNonNull(supplier);
+
     return new Lazy<>(supplier);
   }
 
   @NotNull
   public <U> Lazy<@Nullable U> map(
       @NotNull final Function<? super @Nullable T, ? extends @Nullable U> mapping) {
+    Objects.requireNonNull(mapping);
+
     return Lazy.of(() -> mapping.apply(this.value));
   }
 
@@ -49,6 +55,8 @@ public final class Lazy<T> implements Supplier<T> {
   @SuppressWarnings("unchecked")
   public <U> Lazy<@Nullable U> flatMap(
       @NotNull final Function<? super @Nullable T, @NotNull Lazy<? extends @Nullable U>> mapping) {
+    Objects.requireNonNull(mapping);
+
     return (Lazy<U>) mapping.apply(this.value);
   }
 

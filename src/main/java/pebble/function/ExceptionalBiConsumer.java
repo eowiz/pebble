@@ -7,6 +7,7 @@ import org.jetbrains.annotations.Nullable;
 @FunctionalInterface
 public interface ExceptionalBiConsumer<T, U> {
 
+  @SuppressWarnings("S112")
   void accept(@Nullable T t, @Nullable U u) throws Exception;
 
   @NotNull

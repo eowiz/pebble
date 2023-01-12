@@ -88,6 +88,7 @@ public final class Iteratorz {
       @NotNull Supplier<@Nullable T> seedSupplier,
       @NotNull Predicate<? super @Nullable T> hasNext,
       @NotNull UnaryOperator<@Nullable T> next) {
+    Objects.requireNonNull(seedSupplier);
     Objects.requireNonNull(hasNext);
     Objects.requireNonNull(next);
 

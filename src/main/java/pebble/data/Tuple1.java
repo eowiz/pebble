@@ -19,6 +19,8 @@ public record Tuple1<T>(@Nullable T _1) implements Iterable<T> {
   @NotNull
   public <U> Tuple1<@Nullable U> map(
       @NotNull Function<? super @Nullable T, ? extends @Nullable U> mapping) {
+    Objects.requireNonNull(mapping);
+
     return new Tuple1<>(mapping.apply(this._1));
   }
 
@@ -26,6 +28,8 @@ public record Tuple1<T>(@Nullable T _1) implements Iterable<T> {
   @SuppressWarnings("unchecked")
   public <U> Tuple1<@Nullable U> flatMap(
       @NotNull Function<? super @Nullable T, Tuple1<? extends @Nullable U>> mapping) {
+    Objects.requireNonNull(mapping);
+
     return (Tuple1<U>) mapping.apply(this._1);
   }
 
@@ -44,10 +48,14 @@ public record Tuple1<T>(@Nullable T _1) implements Iterable<T> {
   }
 
   public boolean test(@NotNull Predicate<@Nullable T> predicate) {
+    Objects.requireNonNull(predicate);
+
     return predicate.test(_1);
   }
 
   public boolean contains(@NotNull Predicate<@Nullable T> predicate) {
+    Objects.requireNonNull(predicate);
+
     return test(predicate);
   }
 

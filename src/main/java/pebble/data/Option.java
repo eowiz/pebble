@@ -130,7 +130,7 @@ public abstract sealed class Option<T> implements Iterable<T> permits Some, None
 
   @Nullable
   public final <X extends Throwable> T orElseThrow(
-      @NotNull Supplier<? extends @Nullable X> exceptionSupplier) throws X {
+      @NotNull Supplier<? extends @NotNull X> exceptionSupplier) throws X {
     Objects.requireNonNull(exceptionSupplier);
 
     if (this.isEmpty()) {

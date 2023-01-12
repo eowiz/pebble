@@ -56,8 +56,8 @@ public final class ExceptionOps {
         onTry,
         (e, t) -> {
           for (var onCatch : onCatches) {
-            if (e.getClass().isAssignableFrom(onCatch.getException())) {
-              return onCatch.getBiFunction().apply(e, t);
+            if (e.getClass().isAssignableFrom(onCatch.exception())) {
+              return onCatch.biFunction().apply(e, t);
             }
           }
 

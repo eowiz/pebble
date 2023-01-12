@@ -1,5 +1,6 @@
 package pebble.function;
 
+import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -12,6 +13,8 @@ public interface ExceptionalConsumer<T> {
   @NotNull
   default ExceptionalConsumer<@Nullable T> andThen(
       @NotNull ExceptionalConsumer<@Nullable T> after) {
+    Objects.requireNonNull(after);
+
     return t -> {
       this.accept(t);
       after.accept(t);
