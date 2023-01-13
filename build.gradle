@@ -27,7 +27,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
     // Matcher
-    testImplementation 'org.assertj:assertj-core:3.23.1'
+    testImplementation 'org.assertj:assertj-core:3.24.1'
 
     // Mock
     testImplementation 'org.mockito:mockito-core:4.9.0'
