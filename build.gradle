@@ -30,7 +30,7 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:3.24.1'
 
     // Mock
-    testImplementation 'org.mockito:mockito-core:4.11.0'
+    testImplementation 'org.mockito:mockito-core:5.0.0'
 
     // Logger
     testImplementation 'org.slf4j:slf4j-api:2.0.6'
