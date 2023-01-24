@@ -26,23 +26,21 @@ import pebble.util.Iteratorz;
  * @since 1.0.0
  */
 @SuppressWarnings("java:S1610")
-public abstract sealed class Option<T> implements Iterable<T> permits Some, None {
-
-  private Option() {}
+public sealed interface Option<T> extends Iterable<T> permits Some, None {
 
   /**
    * Returns {@code true}, if this is {@code None}, otherwise {@code false}.
    *
    * @return Returns {@code true}, if this is {@code None}, otherwise {@code false}
    */
-  public abstract boolean isEmpty();
+  boolean isEmpty();
 
   /**
    * @return the value
    * @throws NoSuchElementException if this is a {@code None}.
    */
   @Nullable
-  public abstract T get();
+  T get();
 
   @NotNull
   static <T> Option<@Nullable T> of(@Nullable T value) {
@@ -51,31 +49,31 @@ public abstract sealed class Option<T> implements Iterable<T> permits Some, None
 
   @NotNull
   @SuppressWarnings("unchecked")
-  public static <T> Option<@Nullable T> none() {
+  static <T> Option<@Nullable T> none() {
     return (Option<T>) None.SINGLETON;
   }
 
   @NotNull
-  public static <T> Option<@Nullable T> some(@Nullable T value) {
+  static <T> Option<@Nullable T> some(@Nullable T value) {
     return new Some<>(value);
   }
 
   @NotNull
-  public final Optional<@NotNull T> asJava() {
+  default Optional<@NotNull T> asJava() {
     return isEmpty() ? Optional.empty() : Optional.ofNullable(get());
   }
 
-  public final boolean isPresent() {
+  default boolean isPresent() {
     return !this.isEmpty();
   }
 
   @NotNull
-  public final Option<@Nullable T> nullToNone() {
+  default Option<@Nullable T> nullToNone() {
     return (this.isEmpty() || this.get() != null) ? this : none();
   }
 
   @NotNull
-  public final <U> Option<@Nullable U> map(
+  default <U> Option<@Nullable U> map(
       @NotNull Function<? super @Nullable T, ? extends @Nullable U> mapping) {
     Objects.requireNonNull(mapping);
 
@@ -84,7 +82,7 @@ public abstract sealed class Option<T> implements Iterable<T> permits Some, None
 
   @NotNull
   @SuppressWarnings("unchecked")
-  public final <U> Option<@Nullable U> flatMap(
+  default <U> Option<@Nullable U> flatMap(
       @NotNull Function<? super T, Option<? extends U>> mapping) {
     Objects.requireNonNull(mapping);
 
@@ -92,7 +90,7 @@ public abstract sealed class Option<T> implements Iterable<T> permits Some, None
   }
 
   @NotNull
-  public final Option<@Nullable T> filter(@NotNull Predicate<@Nullable T> predicate) {
+  default Option<@Nullable T> filter(@NotNull Predicate<@Nullable T> predicate) {
     Objects.requireNonNull(predicate);
 
     if (this.isEmpty()) {
@@ -103,33 +101,33 @@ public abstract sealed class Option<T> implements Iterable<T> permits Some, None
   }
 
   @NotNull
-  public final Option<@Nullable T> filterNot(@NotNull Predicate<@Nullable T> predicate) {
+  default Option<@Nullable T> filterNot(@NotNull Predicate<@Nullable T> predicate) {
     Objects.requireNonNull(predicate);
 
     return this.filter(Predicate.not(predicate));
   }
 
   @Nullable
-  public final T orElse(@Nullable T value) {
+  default T orElse(@Nullable T value) {
     return this.isEmpty() ? value : this.get();
   }
 
   @Nullable
-  public final T orElseGet(@NotNull Supplier<@Nullable T> supplier) {
+  default T orElseGet(@NotNull Supplier<@Nullable T> supplier) {
     Objects.requireNonNull(supplier);
 
     return this.isEmpty() ? supplier.get() : this.get();
   }
 
   @NotNull
-  public final Option<@Nullable T> or(@NotNull Option<@Nullable T> another) {
+  default Option<@Nullable T> or(@NotNull Option<@Nullable T> another) {
     Objects.requireNonNull(another);
 
     return this.isEmpty() ? another : this;
   }
 
   @Nullable
-  public final <X extends Throwable> T orElseThrow(
+  default <X extends Throwable> T orElseThrow(
       @NotNull Supplier<? extends @NotNull X> exceptionSupplier) throws X {
     Objects.requireNonNull(exceptionSupplier);
 
@@ -140,29 +138,29 @@ public abstract sealed class Option<T> implements Iterable<T> permits Some, None
     return this.get();
   }
 
-  public final boolean exists(@NotNull Predicate<@Nullable T> predicate) {
+  default boolean exists(@NotNull Predicate<@Nullable T> predicate) {
     Objects.requireNonNull(predicate);
 
     return !this.isEmpty() && predicate.test(this.get());
   }
 
-  public final boolean forall(@NotNull Predicate<@Nullable T> predicate) {
+  default boolean forall(@NotNull Predicate<@Nullable T> predicate) {
     Objects.requireNonNull(predicate);
 
     return this.isEmpty() || predicate.test(this.get());
   }
 
   @NotNull
-  public final <U> Option<Tuple2<@Nullable T, @Nullable U>> zip(@Nullable U right) {
+  default <U> Option<Tuple2<@Nullable T, @Nullable U>> zip(@Nullable U right) {
     return this.isEmpty() ? none() : some(new Tuple2<>(this.get(), right));
   }
 
   @NotNull
-  public final Stream<@Nullable T> stream() {
+  default Stream<@Nullable T> stream() {
     return isEmpty() ? Stream.empty() : Stream.ofNullable(this.get());
   }
 
-  static final class None<T> extends Option<T> {
+  final class None<T> implements Option<T> {
 
     private static final None<?> SINGLETON = new None<>();
 
@@ -206,7 +204,7 @@ public abstract sealed class Option<T> implements Iterable<T> permits Some, None
     }
   }
 
-  static final class Some<T> extends Option<T> {
+  final class Some<T> implements Option<T> {
 
     @Nullable private final T value;
 

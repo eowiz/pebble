@@ -7,32 +7,32 @@ import org.jetbrains.annotations.Nullable;
 import pebble.data.Either.Left;
 import pebble.data.Either.Right;
 
-public abstract sealed class Either<L, R> permits Left, Right {
+public sealed interface Either<L, R> permits Left, Right {
 
-  public abstract boolean isLeft();
-
-  @Nullable
-  public abstract L getLeft();
+  boolean isLeft();
 
   @Nullable
-  public abstract R getRight();
+  L getLeft();
+
+  @Nullable
+  R getRight();
 
   @NotNull
-  public static <L, R> Either<@Nullable L, @Nullable R> rightOf(@Nullable R value) {
+  static <L, R> Either<@Nullable L, @Nullable R> rightOf(@Nullable R value) {
     return new Right<>(value);
   }
 
   @NotNull
-  public static <L, R> Either<@Nullable L, @Nullable R> leftOf(@Nullable L value) {
+  static <L, R> Either<@Nullable L, @Nullable R> leftOf(@Nullable L value) {
     return new Left<>(value);
   }
 
-  public final boolean isRight() {
+  default boolean isRight() {
     return !isLeft();
   }
 
   @NotNull
-  public final <U> Either<@Nullable L, @Nullable U> map(
+  default <U> Either<@Nullable L, @Nullable U> map(
       @NotNull Function<? super @Nullable R, ? extends @Nullable U> mapper) {
     Objects.requireNonNull(mapper);
 
@@ -41,7 +41,7 @@ public abstract sealed class Either<L, R> permits Left, Right {
 
   @NotNull
   @SuppressWarnings("unchecked")
-  public final <U> Either<@Nullable L, @Nullable U> flatMap(
+  default <U> Either<@Nullable L, @Nullable U> flatMap(
       @NotNull
           Function<
                   ? super @Nullable R,
@@ -55,13 +55,11 @@ public abstract sealed class Either<L, R> permits Left, Right {
   }
 
   @NotNull
-  public Option<@Nullable R> option() {
+  default Option<@Nullable R> option() {
     return isLeft() ? Option.none() : Option.some(getRight());
   }
 
-  private Either() {}
-
-  static final class Left<L, R> extends Either<L, R> {
+  final class Left<L, R> implements Either<L, R> {
 
     @Nullable private final L value;
 
@@ -86,7 +84,7 @@ public abstract sealed class Either<L, R> permits Left, Right {
     }
   }
 
-  static final class Right<L, R> extends Either<L, R> {
+  final class Right<L, R> implements Either<L, R> {
 
     @Nullable private final R value;
 

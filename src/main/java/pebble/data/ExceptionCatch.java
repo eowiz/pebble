@@ -8,11 +8,12 @@ import org.jetbrains.annotations.Nullable;
 /**
  * @param <T>
  * @see <a
- * href="https://qiita.com/q-ikawa/items/3f55089e9081e1a854bc">Java8のStreamやOptionalでクールに例外を処理する方法 -
- * Qiita</a>
+ *     href="https://qiita.com/q-ikawa/items/3f55089e9081e1a854bc">Java8のStreamやOptionalでクールに例外を処理する方法
+ *     - Qiita</a>
  */
-public record ExceptionCatch<T, R>(@NotNull Class<? extends @NotNull Exception> exception,
-                                   @NotNull BiFunction<@NotNull Exception, @Nullable T, @Nullable R> biFunction) {
+public record ExceptionCatch<T, R>(
+    @NotNull Class<? extends @NotNull Exception> exception,
+    @NotNull BiFunction<@NotNull Exception, @Nullable T, @Nullable R> biFunction) {
 
   public ExceptionCatch {
     Objects.requireNonNull(exception);
