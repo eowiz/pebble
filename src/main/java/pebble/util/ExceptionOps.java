@@ -12,6 +12,7 @@ import pebble.data.ExceptionCatch;
 import pebble.function.ExceptionalConsumer;
 import pebble.function.ExceptionalFunction;
 
+@SuppressWarnings("java:S100")
 public final class ExceptionOps {
 
   private ExceptionOps() {}
@@ -33,7 +34,7 @@ public final class ExceptionOps {
   @NotNull
   public static <T, R> Function<@Nullable T, @Nullable R> TryF(
       @NotNull ExceptionalFunction<? super @Nullable T, ? extends @Nullable R> onTry,
-      @NotNull BiFunction<@NotNull Exception, @Nullable T, @Nullable R> onCatch) {
+      @NotNull BiFunction<? super @NotNull Exception, ? super @Nullable T, ? extends @Nullable R> onCatch) {
     Objects.requireNonNull(onTry);
     Objects.requireNonNull(onCatch);
 
@@ -46,11 +47,12 @@ public final class ExceptionOps {
     };
   }
 
+  @SafeVarargs
   @NotNull
   static <T, R> Function<@Nullable T, @Nullable R> TryF(
       @NotNull ExceptionalFunction<? super @Nullable T, ? extends @Nullable R> onTry,
       @NotNull Function<@Nullable T, @Nullable R> defaultConsumer,
-      @NotNull ExceptionCatch<@Nullable T, @Nullable R>... onCatches) {
+      @NotNull ExceptionCatch<? super @Nullable T, ? extends @Nullable R>... onCatches) {
     Objects.requireNonNull(onTry);
     Objects.requireNonNull(defaultConsumer);
     Objects.requireNonNull(onCatches);
@@ -68,6 +70,7 @@ public final class ExceptionOps {
         });
   }
 
+  @SuppressWarnings("java:S108")
   @NotNull
   static <T> Consumer<@Nullable T> TryC(@NotNull ExceptionalConsumer<@Nullable T> onTry) {
     Objects.requireNonNull(onTry);
@@ -83,7 +86,7 @@ public final class ExceptionOps {
   @NotNull
   static <T> Consumer<@Nullable T> TryC(
       @NotNull ExceptionalConsumer<@Nullable T> onTry,
-      @NotNull BiConsumer<@NotNull Exception, @Nullable T> onCatch) {
+      @NotNull BiConsumer<? super @NotNull Exception, ? super @Nullable T> onCatch) {
     Objects.requireNonNull(onTry);
     Objects.requireNonNull(onCatch);
 
