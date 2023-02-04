@@ -34,7 +34,9 @@ public final class ExceptionOps {
   @NotNull
   public static <T, R> Function<@Nullable T, @Nullable R> TryF(
       @NotNull ExceptionalFunction<? super @Nullable T, ? extends @Nullable R> onTry,
-      @NotNull BiFunction<? super @NotNull Exception, ? super @Nullable T, ? extends @Nullable R> onCatch) {
+      @NotNull
+          BiFunction<? super @NotNull Exception, ? super @Nullable T, ? extends @Nullable R>
+              onCatch) {
     Objects.requireNonNull(onTry);
     Objects.requireNonNull(onCatch);
 
