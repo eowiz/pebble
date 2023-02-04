@@ -9,6 +9,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import pebble.data.Option.None;
@@ -108,6 +109,7 @@ public sealed interface Option<T> extends Iterable<T> permits Some, None {
   }
 
   @Nullable
+  @Contract(value = "null -> null; !null -> !null", pure = true)
   default T orElse(@Nullable T value) {
     return this.isEmpty() ? value : this.get();
   }
@@ -136,6 +138,11 @@ public sealed interface Option<T> extends Iterable<T> permits Some, None {
     }
 
     return this.get();
+  }
+
+  @Nullable
+  default T orNull() {
+    return this.isPresent() ? this.get() : null;
   }
 
   default boolean exists(@NotNull Predicate<@Nullable T> predicate) {
